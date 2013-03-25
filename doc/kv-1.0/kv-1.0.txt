@@ -3,7 +3,7 @@
 
 Internet Engineering Task Force                              J. Mitchell
 Internet-Draft                                                 C. Wright
-Intended status: Informational                     ARI Registry Services
+Intended status: Informational                               AusRegistry
 Expires: June 4, 2013                                      December 2012
 
 
@@ -545,13 +545,13 @@ Internet-Draft            EPP Key-Value Mapping            December 2012
 Authors' Addresses
 
    James Mitchell
-   ARI Registry Services
+   AusRegistry
    8/10 Queens Road
    Melbourne, Victoria  3004
    AU
 
-   Email: james.mitchell@ariservices.com
-   URI:   www.ariservices.com
+   Email: james.mitchell@ausregistry.com
+   URI:   www.ausregistry.com
 
 
 
@@ -562,13 +562,13 @@ Internet-Draft            EPP Key-Value Mapping            December 2012
 
 
    Chris Wright
-   ARI Registry Services
+   AusRegistry
    8/10 Queens Road
    Melbourne, Victoria  3004
    AU
 
-   Email: chris@ariservices.com
-   URI:   www.ariservices.com
+   Email: chris@ausregistry.com
+   URI:   www.ausregistry.com
 
 
 

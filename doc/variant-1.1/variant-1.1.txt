@@ -2,10 +2,9 @@
 
 
 Network Working Group                                        J. Mitchell
-Internet-Draft                                               AusRegistry
-Intended status: Standards Track                               C. Wright
-Expires: June 4, 2013                              ARI Registry Services
-                                                           December 2012
+Internet-Draft                                                 C. Wright
+Intended status: Standards Track                             AusRegistry
+Expires: June 4, 2013                                      December 2012
 
 
  Domain Name Variant Extension Mapping for the Extensible Provisioning
@@ -49,6 +48,7 @@ Copyright Notice
    include Simplified BSD License text as described in Section 4.e of
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
+
 
 
 
@@ -562,7 +562,7 @@ Internet-Draft           EPP IDN Variant Mapping           December 2012
 
 
    Chris Wright
-   ARI Registry Services
+   AusRegistry
    8/10 Queens Road
    Melbourne, Victoria  3004
    AU
