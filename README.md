@@ -1,2 +1,2 @@
-[http://ausregistry.github.com]
+http://ausregistry.github.com
 ======================
