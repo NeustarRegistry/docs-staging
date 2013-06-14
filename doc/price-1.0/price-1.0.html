@@ -1,8 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en"><head><title>Premium Domain Name Extension Mapping for the
+<html lang="en"><head><title>Domain Name Price Extension Mapping for the
 			Extensible Provisioning Protocol (EPP)</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="Premium Domain Name Extension Mapping for the
+<meta name="description" content="Domain Name Price Extension Mapping for the
 			Extensible Provisioning Protocol (EPP)">
 <meta name="keywords" content="EPP">
 <meta name="generator" content="xml2rfc v1.36 (http://xml.resource.org/)">
@@ -149,21 +149,23 @@
 <tr><td class="header">Intended status: Informational</td><td class="header">AusRegistry</td></tr>
 <tr><td class="header">Expires: June 4, 2013</td><td class="header">December 2012</td></tr>
 </table></td></tr></table>
-<h1><br />Premium Domain Name Extension Mapping for the
-			Extensible Provisioning Protocol (EPP)<br />draft-ar-premium-domain-epp-mapping-01</h1>
+<h1><br />Domain Name Price Extension Mapping for the
+			Extensible Provisioning Protocol (EPP)<br />draft-ar-price-domain-epp-mapping-01</h1>
 
 <h3>Abstract</h3>
 
 <p>
-				This document describes an Extensible Provisioning Protocol (EPP)
-				extension mapping for the provisioning and management of premium
-				domain names.
+                This document describes an Extensible Provisioning Protocol (EPP)
+                extension mapping for the provisioning and management of premium
+                domain names.
 			
 </p>
 <h3>Status of this Memo</h3>
 <p>
-This Internet-Draft is submitted  in full
-conformance with the provisions of BCP&nbsp;78 and BCP&nbsp;79.</p>
+This document is an Internet-Draft and is
+NOT offered in accordance with Section&nbsp;10 of RFC&nbsp;2026,
+and the author does not provide the IETF with any rights other
+than to publish as an Internet-Draft.</p>
 <p>
 Internet-Drafts are working documents of the Internet Engineering
 Task Force (IETF).  Note that other groups may also distribute
@@ -176,21 +178,6 @@ It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
 This Internet-Draft will expire on June 4, 2013.</p>
-
-<h3>Copyright Notice</h3>
-<p>
-Copyright (c) 2012 IETF Trust and the persons identified as the
-document authors.  All rights reserved.</p>
-<p>
-This document is subject to BCP 78 and the IETF Trust's Legal
-Provisions Relating to IETF Documents
-(http://trustee.ietf.org/license-info) in effect on the date of
-publication of this document.  Please review these documents
-carefully, as they describe your rights and restrictions with respect
-to this document. Code Components extracted from this document must
-include Simplified BSD License text as described in Section 4.e of
-the Trust Legal Provisions and are provided without warranty as
-described in the Simplified BSD License.</p>
 <a name="toc"></a><br /><hr />
 <h3>Table of Contents</h3>
 <p class="toc">
@@ -227,12 +214,10 @@ EPP &lt;update&gt; Command<br />
 <a href="#anchor16">4.</a>&nbsp;
 Formal Syntax<br />
 <a href="#anchor17">5.</a>&nbsp;
-IANA Considerations<br />
-<a href="#anchor18">6.</a>&nbsp;
 Acknowledgments<br />
-<a href="#anchor19">7.</a>&nbsp;
+<a href="#anchor18">6.</a>&nbsp;
 Security Considerations<br />
-<a href="#rfc.references1">8.</a>&nbsp;
+<a href="#rfc.references1">7.</a>&nbsp;
 Normative References<br />
 <a href="#rfc.authors">&#167;</a>&nbsp;
 Authors' Addresses<br />
@@ -253,17 +238,18 @@ Introduction</h3>
 			
 </p>
 <p>
-				This extension provides mechanism for clients to obtain and
-				acknowledge the price charged for the registration and renewal of
-				premium domain names. Acknowledgement takes place at the time of
-				attaining sponsorship, i.e. at time of registration and transfer.
+				This extension provides mechanism for clients to obtain the price
+                of a domain name, not limited to premium domain names, and a mechanism
+                to acknowledge the price charged for the registration and renewal of
+                domain names.  Acknowledgement takes place at time of
+                registration, transfer and renewal.
 				Updates to pricing information that affects existing registrations
 				must be provided to clients using an out of band mechanism.
 			
 </p>
 <p>
-				This specification does not preclude the publication of a premium
-				domain name list. Clients may prefer an externally accessible list
+				This specification does not preclude the publication of a price
+                list. Clients may prefer an externally accessible list
 				to performing a check before every registration.
 			
 </p>
@@ -280,9 +266,9 @@ Conventions Used in This Document</h3>
 				
 </p>
 <p>
-					"premium-1.0" is used as an abbreviation for
-					"urn:ietf:params:xml:ns:premium-1.0". The XML namespace prefix
-					"premium" is used, but implementations MUST NOT depend on it and
+					"price-1.0" is used as an abbreviation for
+					"urn:ar:params:xml:ns:price-1.0". The XML namespace prefix
+					"price" is used, but implementations MUST NOT depend on it and
 					instead employ a proper namespace-aware XML parser and serializer
 					to interpret and output the XML documents.
 				
@@ -305,10 +291,11 @@ Price</h3>
 
 <p>
 					This extension defines price elements for the registration of and
-					renewal of premium domain names. Prices are expressed assuming the
-					minimum registration period available for the premium domain name.
-					The minimum available period is defined by the server and may
-					change based on the specific registration phases available.
+					renewal of domain names. Prices are expressed for the period requested
+                    by the client, or the minimum registration period available for
+                    the domain name. The minimum available period is defined by
+                    the server and may change based on the specific registration phases
+                    available.
 				
 </p>
 <p>
@@ -364,70 +351,95 @@ EPP &lt;check&gt; Command</h3>
 					
 </p>
 <p>
-						To enable clients to identify domain names that attract a
-						premium registration or renewal fee, the &lt;domain:check&gt;
-						command is extended with a &lt;premium:check&gt; element, which
-						signals a client’s intention to retrieve premium name information.
+						To enable clients to identify the registration or renewal fee,
+                        the &lt;domain:check&gt; command is extended with a
+                        &lt;price:check&gt; element, which signals a client’s intention
+                        to retrieve a domain name's price information. The
+                        &lt;price:check&gt; extension element MAY contain the following
+                        child element:
+                        </p>
+<ul class="text">
+<li>
+                                An OPTIONAL &lt;period&gt; element may be provided
+                                to obtain the price information of the domain names
+                                for a particular period.
+                            
+</li>
+</ul><p>
 					
 </p>
-<p style='text-align: left'>Example &lt;check&gt; command requesting premium name
-							information
+<p style='text-align: left'>Example &lt;check&gt; command requesting domain name
+							price information
 </p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
 &lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
   &lt;command&gt;
     &lt;check&gt;
       &lt;check xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
-        &lt;name&gt;example1.tld&lt;/name&gt;
-        &lt;name&gt;example2.tld&lt;/name&gt;
+        &lt;name&gt;premium.example&lt;/name&gt;
+        &lt;name&gt;non-premium.example&lt;/name&gt;
+        &lt;name&gt;invalid-price.example&lt;/name&gt;
       &lt;/check&gt;
     &lt;/check&gt;
     &lt;extension&gt;
-      &lt;check xmlns="urn:ar:params:xml:ns:premium-1.0" /&gt;
+      &lt;check xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
+        &lt;period&gt;5&lt;/period&gt;
+      &lt;/check&gt;
     &lt;/extension&gt;
     &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
   &lt;/command&gt;
 &lt;/epp&gt;
 </pre></div>
 <p>
-						When a &lt;check&gt; command containing the &lt;premium:check&gt;
+						When a &lt;check&gt; command containing the &lt;price:check&gt;
 						element has been processed successfully, the server MUST NOT
 						respond with the &lt;domain:chkData&gt; element described in the
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
-						Instead, servers MUST respond with a &lt;premium:chkData&gt;
-						element that contains one &lt;premium:cd&gt; element for each
-						domain name present in the command. The &lt;premium:cd&gt; element
+						Instead, servers MUST respond with a &lt;price:chkData&gt;
+						element that contains one &lt;price:cd&gt; element for each
+						domain name present in the command. The &lt;price:cd&gt; element
 						contains the following child elements:
 						</p>
 <ul class="text">
 <li>
-								A &lt;premium:name&gt; element containing a domain name from
+								A &lt;name&gt; element containing a domain name from
 								the corresponding command. The order and composition of names in
 								the response MUST be the same as the order and composition
 								provided in the command, with exception to transformations
-								required of validating XML parsers. A MANDATORY "premium"
+								required of validating XML parsers. An OPTIONAL "premium"
 								attribute indicates whether the name attracts a premium price.
 							
 </li>
 <li>
-								A &lt;premium:price&gt; element containing the base price
+								A &lt;price&gt; element containing the base price
 								charged for the registration of the domain name. This element
-								MAY be omitted if the registration of the domain name does not
-								attract premium fees.
+								MAY be omitted if create price could not be determined.
 							
 </li>
 <li>
-								A &lt;premium:renewalPrice&gt; element containing the base
-								price charged for the renewal of the domain name. This element
-								MAY be omitted if the renewal of the domain name does not
-								attract premium fees.
+								A &lt;renewalPrice&gt; element containing the base
+								price charged for the renewal of the domain name.This element
+                                MAY be omitted if the renewal price could not be determined.
 							
+</li>
+<li>
+                                A &lt;reason&gt; element containing the server-specific explanation
+                                for why the price information could not be provided.
+                                This element MAY be omitted if price or renew price information is
+                                available.
+                            
+</li>
+<li>
+                                A &lt;period&gt; element containing the period to which the price
+                                information corresponds. This element MAY be omitted if the client
+                                can imply period information.
+                            
 </li>
 </ul><p>
 					
 </p>
-<p style='text-align: left'>Example &lt;check&gt; response providing premium name
-							information
+<p style='text-align: left'>Example &lt;check&gt; response providing domain name
+							price information
 </p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 &lt;?xml version="1.0" standalone="no"?&gt;
 &lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
@@ -435,18 +447,27 @@ EPP &lt;check&gt; Command</h3>
     &lt;result code="1000"&gt;
       &lt;msg&gt;Command completed successfully&lt;/msg&gt;
     &lt;/result&gt;
-    &lt;resData&gt;
-      &lt;chkData xmlns="urn:ar:params:xml:ns:premium-1.0"&gt;
+    &lt;extension&gt;
+      &lt;chkData xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
         &lt;cd&gt;
           &lt;name premium="1"&gt;premium.example&lt;/name&gt;
+          &lt;period&gt;5&lt;/period&gt;
           &lt;price&gt;100.00&lt;/price&gt;
           &lt;renewalPrice&gt;100.00&lt;/renewalPrice&gt;
         &lt;/cd&gt;
         &lt;cd&gt;
           &lt;name premium="0"&gt;non-premium.example&lt;/name&gt;
+          &lt;period&gt;5&lt;/period&gt;
+          &lt;price&gt;10.00&lt;/price&gt;
+          &lt;renewalPrice&gt;10.00&lt;/renewalPrice&gt;
+        &lt;/cd&gt;
+        &lt;cd&gt;
+          &lt;name premium="0"&gt;invalid-price.example&lt;/name&gt;
+          &lt;period&gt;5&lt;/period&gt;
+          &lt;reason&gt;A valid price could not be determined&lt;reason&gt;
         &lt;/cd&gt;
       &lt;/chkData&gt;
-    &lt;/resData&gt;
+    &lt;/extension&gt;
     &lt;trID&gt;
       &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
       &lt;svTRID&gt;54321-XYZ&lt;/svTRID&gt;
@@ -506,16 +527,16 @@ EPP &lt;create&gt; Command</h3>
 <p>
 						To facilitate the registration of domain names that attract a
 						premium registration fee, the &lt;domain:create&gt; command is
-						extended with a &lt;premium:create&gt; element, that signal a
+						extended with a &lt;price:create&gt; element, which signals a
 						client’s acknowledgment of the premium fees associated with the
-						transaction. The &lt;premium:create&gt; element contains the
+						transaction. The &lt;price:create&gt; element contains the
 						following child elements:
 						</p>
 <ul class="text">
 <li>
-								A &lt;premium:ack&gt; element that signals the client is aware
+								A &lt;ack&gt; element that signals the client is aware
 								of a premium fee. Clients MAY include child
-								&lt;premium:price&gt; and &lt;premium:renewalPrice&gt; elements
+								&lt;price&gt; and &lt;renewalPrice&gt; elements
 								that contain the current premium price. If provided, servers
 								SHOULD confirm the information matches the current pricing
 								information for the corresponding domain name.
@@ -546,7 +567,7 @@ EPP &lt;create&gt; Command</h3>
       &lt;/create&gt;
     &lt;/create&gt;
     &lt;extension&gt;
-      &lt;create xmlns="urn:ar:params:xml:ns:premium-1.0"&gt;
+      &lt;create xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
         &lt;ack /&gt;
       &lt;/create&gt;
     &lt;/extension&gt;
@@ -576,7 +597,7 @@ EPP &lt;create&gt; Command</h3>
       &lt;/create&gt;
     &lt;/create&gt;
     &lt;extension&gt;
-      &lt;create xmlns="urn:ar:params:xml:ns:premium-1.0"&gt;
+      &lt;create xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
         &lt;ack&gt;
           &lt;price&gt;100.00&lt;/price&gt;
           &lt;renewalPrice&gt;100.00&lt;/renewalPrice&gt;
@@ -591,10 +612,7 @@ EPP &lt;create&gt; Command</h3>
 						Servers that require the use of this extension for the
 						registration of premium names SHOULD return a 2003 "Required
 						parameter missing" error in response to requests for registration
-						of premium names that do not include this extension. In addition,
-						servers SHOULD reject requests that contain the
-						&lt;premium:create&gt; element for registration of domain names
-						that do not attract premium fees.
+						of premium names that do not include this extension.
 					
 </p>
 <a name="anchor12"></a><br /><hr />
@@ -614,10 +632,64 @@ EPP &lt;delete&gt; Command</h3>
 EPP &lt;renew&gt; Command</h3>
 
 <p>
-						This extension does not define any extension to the EPP
-						&lt;renew&gt; command or response described in the
-						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
-					
+                        This extension defines additional elements for the EPP
+                        &lt;transfer&gt; command described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                        No additional elements are defined for the EPP &lt;transfer&gt;
+                        response.
+                    
+</p>
+<p>
+                        To enable clients to renew domain names that attract a premium
+                        renewal fee, the &lt;domain:renew&gt; command is extended
+                        with a &lt;price:renew&gt; element, that signal a client’s
+                        acknowledgment of the premium fees associated with the
+                        transaction. The &lt;price:renew&gt; element contains the
+                        following child elements:
+                        </p>
+<ul class="text">
+<li>
+                                A &lt;ack&gt; element that signals the client is aware
+                                of a premium fee. Clients MAY include a child
+                                &lt;renewalPrice&gt; element that contains the current
+                                renewal premium price. If provided, servers SHOULD confirm the
+                                information matches the current pricing information for the
+                                corresponding domain name.
+                            
+</li>
+</ul><p>
+                    
+</p>
+<p style='text-align: left'>Example &lt;renew&gt; command for a premium domain
+                            name with price acknowledgement
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;renew&gt;
+        &lt;renew xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;name&gt;domain-name.tld&lt;/name&gt;
+            &lt;curExpDate&gt;2010-09-01&lt;/curExpDate&gt;
+            &lt;period unit="y"&gt;5&lt;/period&gt;
+        &lt;/renew&gt;
+    &lt;/renew&gt;
+    &lt;extension&gt;
+      &lt;renew xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
+        &lt;ack&gt;
+          &lt;renewalPrice&gt;100.00&lt;/renewalPrice&gt;
+        &lt;/ack&gt;
+      &lt;/renew&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+                        Servers that require the use of this extension for the renewal
+                        of premium names SHOULD return a 2003 "Required parameter missing"
+                        error in response to requests for renewal of premium names that do
+                        not include this extension.
+                    
 </p>
 <a name="anchor14"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
@@ -634,18 +706,17 @@ EPP &lt;transfer&gt; Command</h3>
 </p>
 <p>
 						To enable clients to transfer domain names that attract a premium
-						registration fee, the &lt;domain:transfer&gt; command is extended
-						with a &lt;premium:transfer&gt; element, that signal a client’s
+						renewal fee, the &lt;domain:transfer&gt; command is extended
+						with a &lt;price:transfer&gt; element, that signal a client’s
 						acknowledgment of the premium fees associated with the
-						transaction. The &lt;premium:transfer&gt; element contains the
-						following child
-						elements:
+						transaction. The &lt;price:transfer&gt; element contains the
+						following child elements:
 						</p>
 <ul class="text">
 <li>
-								A &lt;premium:ack&gt; element that signals the client is aware
+								A &lt;ack&gt; element that signals the client is aware
 								of a premium fee. Clients MAY include a child
-								&lt;premium:renewalPrice&gt; element that contains the current
+								&lt;renewalPrice&gt; element that contains the current
 								renewal premium price. If provided, servers SHOULD confirm the
 								information matches the current pricing information for the
 								corresponding domain name.
@@ -669,7 +740,7 @@ EPP &lt;transfer&gt; Command</h3>
       &lt;/transfer&gt;
     &lt;/transfer&gt;
     &lt;extension&gt;
-      &lt;transfer xmlns="urn:ar:params:xml:ns:premium-1.0"&gt;
+      &lt;transfer xmlns="urn:ar:params:xml:ns:price-1.0"&gt;
         &lt;ack&gt;
           &lt;renewalPrice&gt;100.00&lt;/renewalPrice&gt;
         &lt;/ack&gt;
@@ -679,6 +750,13 @@ EPP &lt;transfer&gt; Command</h3>
   &lt;/command&gt;
 &lt;/epp&gt;
 </pre></div>
+<p>
+                        Servers that require the use of this extension for the renewal
+                        of premium names SHOULD return a 2003 "Required parameter missing"
+                        error in response to requests for renewal of premium names that do
+                        not include this extension.
+                    
+</p>
 <a name="anchor15"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.3.2.5"></a><h3>3.2.5.&nbsp;
@@ -696,22 +774,31 @@ EPP &lt;update&gt; Command</h3>
 Formal Syntax</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
 &lt;?xml version="1.0" standalone="no" ?&gt;
-&lt;schema targetNamespace="urn:ar:params:xml:ns:premium-1.0"
-  xmlns:premium="urn:ar:params:xml:ns:premium-1.0"
+&lt;schema targetNamespace="urn:ar:params:xml:ns:price-1.0"
+  xmlns:price="urn:ar:params:xml:ns:price-1.0"
   xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+  xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
   xmlns="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified"&gt;
 
   &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0" /&gt;
+  &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0" /&gt;
 
   &lt;!-- command-response extension elements --&gt;
-  &lt;element name="check" /&gt;
-  &lt;element name="create" type="premium:ackType" /&gt;
-  &lt;element name="transfer" type="premium:ackType" /&gt;
+  &lt;element name="check" type="price:chkType" /&gt;
+  &lt;element name="create" type="price:ackType" /&gt;
+  &lt;element name="renew" type="price:ackType" /&gt;
+  &lt;element name="transfer" type="price:ackType" /&gt;
+
+  &lt;complexType name="chkType"&gt;
+  &lt;sequence&gt;
+    &lt;element name="period" type="domain:periodType" minOccurs="0" /&gt;
+  &lt;/sequence&gt;
+  &lt;/complexType&gt;
 
   &lt;complexType name="ackType"&gt;
     &lt;sequence&gt;
-      &lt;element name="ack" type="premium:priceAckType" /&gt;
+      &lt;element name="ack" type="price:priceAckType" /&gt;
     &lt;/sequence&gt;
   &lt;/complexType&gt;
 
@@ -723,54 +810,50 @@ Formal Syntax</h3>
   &lt;/complexType&gt;
 
   &lt;!-- response elements --&gt;
-  &lt;element name="chkData" type="premium:chkDataType" /&gt;
+  &lt;element name="chkData" type="price:chkDataType" /&gt;
 
   &lt;complexType name="chkDataType"&gt;
     &lt;sequence&gt;
-      &lt;element name="cd" type="premium:checkType"
-        maxOccurs="unbounded" /&gt;
+      &lt;element name="cd" type="price:checkType"
+               maxOccurs="unbounded" /&gt;
     &lt;/sequence&gt;
   &lt;/complexType&gt;
 
   &lt;complexType name="checkType"&gt;
     &lt;sequence&gt;
-      &lt;element name="name" type="premium:checkNameType" /&gt;
+      &lt;element name="name" type="price:checkNameType" /&gt;
+      &lt;element name="period" type="domain:periodType"
+               minOccurs="0" /&gt;
       &lt;element name="price" type="decimal" minOccurs="0" /&gt;
       &lt;element name="renewalPrice" type="decimal" minOccurs="0" /&gt;
+      &lt;element name="reason" type="eppcom:reasonType"
+               minOccurs="0" /&gt;
     &lt;/sequence&gt;
   &lt;/complexType&gt;
 
   &lt;complexType name="checkNameType"&gt;
     &lt;simpleContent&gt;
-      &lt;extension base="eppcom:labelType"&gt;
-        &lt;attribute name="premium" type="boolean" use="required" /&gt;
-      &lt;/extension&gt;
+        &lt;extension base="eppcom:labelType"&gt;
+            &lt;attribute name="premium" type="boolean" /&gt;
+        &lt;/extension&gt;
     &lt;/simpleContent&gt;
   &lt;/complexType&gt;
-
 &lt;/schema&gt;
 </pre></div>
 <a name="anchor17"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
-IANA Considerations</h3>
-
-<p>This memo includes no request to IANA.
-</p>
-<a name="anchor18"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.6"></a><h3>6.&nbsp;
 Acknowledgments</h3>
 
 <p>
 				This document was inspired by Verisign's Premium Domain extension
-				and draws many simlarities to increase familarity and reduce
+				and draws many similarities to increase familiarity and reduce
 				development time.
 			
 </p>
-<a name="anchor19"></a><br /><hr />
+<a name="anchor18"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.7"></a><h3>7.&nbsp;
+<a name="rfc.section.6"></a><h3>6.&nbsp;
 Security Considerations</h3>
 
 <p>
@@ -786,7 +869,7 @@ Security Considerations</h3>
 </p>
 <a name="rfc.references1"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<h3>8.&nbsp;Normative References</h3>
+<h3>7.&nbsp;Normative References</h3>
 <table width="99%" border="0">
 <tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
 <td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>

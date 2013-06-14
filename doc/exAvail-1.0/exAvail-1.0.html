@@ -1,0 +1,902 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head><title>Domain Name Extended Availability Extension Mapping for the
+            Extensible Provisioning
+            Protocol (EPP)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Domain Name Extended Availability Extension Mapping for the
+            Extensible Provisioning
+            Protocol (EPP)">
+<meta name="keywords" content="EPP">
+<meta name="generator" content="xml2rfc v1.36 (http://xml.resource.org/)">
+<style type='text/css'><!--
+        body {
+                font-family: verdana, charcoal, helvetica, arial, sans-serif;
+                font-size: small; color: #000; background-color: #FFF;
+                margin: 2em;
+        }
+        h1, h2, h3, h4, h5, h6 {
+                font-family: helvetica, monaco, "MS Sans Serif", arial, sans-serif;
+                font-weight: bold; font-style: normal;
+        }
+        h1 { color: #900; background-color: transparent; text-align: right; }
+        h3 { color: #333; background-color: transparent; }
+
+        td.RFCbug {
+                font-size: x-small; text-decoration: none;
+                width: 30px; height: 30px; padding-top: 2px;
+                text-align: justify; vertical-align: middle;
+                background-color: #000;
+        }
+        td.RFCbug span.RFC {
+                font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+                font-weight: bold; color: #666;
+        }
+        td.RFCbug span.hotText {
+                font-family: charcoal, monaco, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+                font-weight: normal; text-align: center; color: #FFF;
+        }
+
+        table.TOCbug { width: 30px; height: 15px; }
+        td.TOCbug {
+                text-align: center; width: 30px; height: 15px;
+                color: #FFF; background-color: #900;
+        }
+        td.TOCbug a {
+                font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, sans-serif;
+                font-weight: bold; font-size: x-small; text-decoration: none;
+                color: #FFF; background-color: transparent;
+        }
+
+        td.header {
+                font-family: arial, helvetica, sans-serif; font-size: x-small;
+                vertical-align: top; width: 33%;
+                color: #FFF; background-color: #666;
+        }
+        td.author { font-weight: bold; font-size: x-small; margin-left: 4em; }
+        td.author-text { font-size: x-small; }
+
+        /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+        a.info {
+                /* This is the key. */
+                position: relative;
+                z-index: 24;
+                text-decoration: none;
+        }
+        a.info:hover {
+                z-index: 25;
+                color: #FFF; background-color: #900;
+        }
+        a.info span { display: none; }
+        a.info:hover span.info {
+                /* The span will display just on :hover state. */
+                display: block;
+                position: absolute;
+                font-size: smaller;
+                top: 2em; left: -5em; width: 15em;
+                padding: 2px; border: 1px solid #333;
+                color: #900; background-color: #EEE;
+                text-align: left;
+        }
+
+        a { font-weight: bold; }
+        a:link    { color: #900; background-color: transparent; }
+        a:visited { color: #633; background-color: transparent; }
+        a:active  { color: #633; background-color: transparent; }
+
+        p { margin-left: 2em; margin-right: 2em; }
+        p.copyright { font-size: x-small; }
+        p.toc { font-size: small; font-weight: bold; margin-left: 3em; }
+        table.toc { margin: 0 0 0 3em; padding: 0; border: 0; vertical-align: text-top; }
+        td.toc { font-size: small; font-weight: bold; vertical-align: text-top; }
+
+        ol.text { margin-left: 2em; margin-right: 2em; }
+        ul.text { margin-left: 2em; margin-right: 2em; }
+        li      { margin-left: 3em; }
+
+        /* RFC-2629 <spanx>s and <artwork>s. */
+        em     { font-style: italic; }
+        strong { font-weight: bold; }
+        dfn    { font-weight: bold; font-style: normal; }
+        cite   { font-weight: normal; font-style: normal; }
+        tt     { color: #036; }
+        tt, pre, pre dfn, pre em, pre cite, pre span {
+                font-family: "Courier New", Courier, monospace; font-size: small;
+        }
+        pre {
+                text-align: left; padding: 4px;
+                color: #000; background-color: #CCC;
+        }
+        pre dfn  { color: #900; }
+        pre em   { color: #66F; background-color: #FFC; font-weight: normal; }
+        pre .key { color: #33C; font-weight: bold; }
+        pre .id  { color: #900; }
+        pre .str { color: #000; background-color: #CFF; }
+        pre .val { color: #066; }
+        pre .rep { color: #909; }
+        pre .oth { color: #000; background-color: #FCF; }
+        pre .err { background-color: #FCC; }
+
+        /* RFC-2629 <texttable>s. */
+        table.all, table.full, table.headers, table.none {
+                font-size: small; text-align: center; border-width: 2px;
+                vertical-align: top; border-collapse: collapse;
+        }
+        table.all, table.full { border-style: solid; border-color: black; }
+        table.headers, table.none { border-style: none; }
+        th {
+                font-weight: bold; border-color: black;
+                border-width: 2px 2px 3px 2px;
+        }
+        table.all th, table.full th { border-style: solid; }
+        table.headers th { border-style: none none solid none; }
+        table.none th { border-style: none; }
+        table.all td {
+                border-style: solid; border-color: #333;
+                border-width: 1px 2px;
+        }
+        table.full td, table.headers td, table.none td { border-style: none; }
+
+        hr { height: 1px; }
+        hr.insert {
+                width: 80%; border-style: none; border-width: 0;
+                color: #CCC; background-color: #CCC;
+        }
+--></style>
+</head>
+<body>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
+<tr><td class="header">Internet Engineering Task Force</td><td class="header">J. Mitchell</td></tr>
+<tr><td class="header">Internet-Draft</td><td class="header">C. Wright</td></tr>
+<tr><td class="header">Intended status: Experimental</td><td class="header">AusRegistry</td></tr>
+<tr><td class="header">Expires: November 2, 2013</td><td class="header">May 2013</td></tr>
+</table></td></tr></table>
+<h1><br />Domain Name Extended Availability Extension Mapping for the
+            Extensible Provisioning
+            Protocol (EPP)<br />draft-ar-exAvail-epp-mapping-01</h1>
+
+<h3>Abstract</h3>
+
+<p>
+                This document describes extensions to the Extensible Provisioning Protocol (EPP)
+                for obtaining detailed availability information of domain names.
+            
+</p>
+<h3>Status of this Memo</h3>
+<p>
+This document is an Internet-Draft and is
+NOT offered in accordance with Section&nbsp;10 of RFC&nbsp;2026,
+and the author does not provide the IETF with any rights other
+than to publish as an Internet-Draft.</p>
+<p>
+Internet-Drafts are working documents of the Internet Engineering
+Task Force (IETF).  Note that other groups may also distribute
+working documents as Internet-Drafts.  The list of current
+Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>
+Internet-Drafts are draft documents valid for a maximum of six months
+and may be updated, replaced, or obsoleted by other documents at any time.
+It is inappropriate to use Internet-Drafts as reference material or to cite
+them other than as &ldquo;work in progress.&rdquo;</p>
+<p>
+This Internet-Draft will expire on November 2, 2013.</p>
+<a name="toc"></a><br /><hr />
+<h3>Table of Contents</h3>
+<p class="toc">
+<a href="#anchor1">1.</a>&nbsp;
+Introduction<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor2">1.1.</a>&nbsp;
+Conventions Used in This Document<br />
+<a href="#anchor3">2.</a>&nbsp;
+Extended Availability Details<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor4">2.1.</a>&nbsp;
+State<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor5">2.2.</a>&nbsp;
+Phase Identifier<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor6">2.3.</a>&nbsp;
+Reason<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor7">2.4.</a>&nbsp;
+Primary Domain Name<br />
+<a href="#anchor8">3.</a>&nbsp;
+EPP Command Mapping<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">3.1.</a>&nbsp;
+EPP Query Commands<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">3.1.1.</a>&nbsp;
+EPP &lt;check&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">3.1.2.</a>&nbsp;
+EPP &lt;info&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">3.1.3.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor13">3.2.</a>&nbsp;
+EPP Transform Commands<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor14">3.2.1.</a>&nbsp;
+EPP &lt;create&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor15">3.2.2.</a>&nbsp;
+EPP &lt;delete&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor16">3.2.3.</a>&nbsp;
+EPP &lt;renew&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor17">3.2.4.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor18">3.2.5.</a>&nbsp;
+EPP &lt;update&gt; Command<br />
+<a href="#anchor19">4.</a>&nbsp;
+Formal Syntax<br />
+<a href="#anchor20">5.</a>&nbsp;
+Security Considerations<br />
+<a href="#rfc.references1">6.</a>&nbsp;
+References<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references1">6.1.</a>&nbsp;
+Normative References<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references2">6.2.</a>&nbsp;
+Informative References<br />
+<a href="#rfc.authors">&#167;</a>&nbsp;
+Authors' Addresses<br />
+</p>
+<br clear="all" />
+
+<a name="anchor1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.1"></a><h3>1.&nbsp;
+Introduction</h3>
+
+<p>
+                The check command described in
+                <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731]
+                provides a hint to determine a domain object's availability.
+                This works well in providing basic information
+                for the client to anticipate the success or failure of registering
+                a domain using the &lt;create&gt; command.
+                To provide a more rich user interface to potential registrants,
+                clients require more detailed information regarding object availability
+                than available through a binary yes/no response.
+            
+</p>
+<p>
+                This document describes extensions to the Extensible Provisioning Protocol (EPP)
+                for clients to obtain extended details regarding the availability of domain names.
+            
+</p>
+<p>
+                This extension can be used when more detailed information is required
+                about the availability of a domain name.
+            
+</p>
+<a name="anchor2"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.1.1"></a><h3>1.1.&nbsp;
+Conventions Used in This Document</h3>
+
+<p>
+                    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+                    "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in
+                    this document are to be interpreted as described in
+                    <a class='info' href='#RFC2119'>RFC 2119<span> (</span><span class='info'>Bradner, S., &ldquo;Key words for use in RFCs to Indicate Requirement Levels,&rdquo; March&nbsp;1997.</span><span>)</span></a> [RFC2119].
+                
+</p>
+<p>
+                    "exAvail-1.0" is used as an abbreviation for
+                    "urn:ar:params:xml:ns:exAvail-1.0". The XML namespace prefix
+                    "exAvail" is used, but implementations MUST NOT depend on it and
+                    instead employ a proper namespace-aware XML parser and serializer
+                    to interpret and output the XML documents.
+                
+</p>
+<p>In this document english words with letters of different cases are
+                    used to indicate variants, even though these don't indicate variants
+                    in a real registry.
+                
+</p>
+<a name="anchor3"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2"></a><h3>2.&nbsp;
+Extended Availability Details</h3>
+
+<p>
+                To provide more details about the availability of a domain object,
+                this extension adds additional elements to the
+                <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                Only those new elements are described here.
+            
+</p>
+<a name="anchor4"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2.1"></a><h3>2.1.&nbsp;
+State</h3>
+
+<p>
+                    The extended availability details of a domain name are
+                    provided using the state element.
+                    A MANDATORY "s" attribute describes the extended availability
+                    state of the queried domain name.
+                    The list of extended availability states with a description
+                    of any child elements of this state element are provided below:
+                    </p>
+<ul class="text">
+<li>
+                            available - The queried domain name is available to be
+                            registered as a domain object with immediate effect.
+                            If the registry is currently not accepting registrations,
+                            the date and time from which the domain name can be
+                            registered MAY be provided as a child element of this state.
+                        
+</li>
+<li>
+                            application - The queried domain name is available to
+                            be registered only as a domain application object.
+                            The identifier of the phase in which a domain application
+                            can be submitted for this domain name is provided
+                            in a child element.
+                            If the registry is not currently accepting applications,
+                            the date and time from which an application can be
+                            submitted MAY be provided as a child element of this state.
+                        
+</li>
+<li>
+                            unavailable - The queried domain name meets the composition
+                            requirements for domain names, however not available to
+                            be registered as either a domain object or a domain
+                            application object.
+                            The reason of unavailability for this domain name MAY be
+                            provided as a child element of this state.
+                        
+</li>
+<li>
+                            reserved - The queried domain name is reserved by server policy
+                            and is not available for registration.
+                            The server specific reason for the reservation of this label
+                            MAY be provided as a child element of this state.
+                        
+</li>
+<li>
+                            invalid - The queried domain name does not meet the composition
+                            requirements for domain names and is not available for
+                            registration as either a domain object or a domain
+                            application object.
+                        
+</li>
+<li>
+                            activatedVariant - The queried domain name is an activated
+                            variant of another domain name in the repository.
+                            The domain name that resulted in the activation of this variant
+                            SHOULD be provided as a child 'primaryDomainName' element of this
+                            state.
+                        
+</li>
+<li>
+                            blockedVariant - The queried domain name is a blocked
+                            variant of another domain name in the repository.
+                            The domain name that resulted in this variant
+                            getting blocked SHOULD be provided as a child
+                            'primaryDomainName' element.
+                        
+</li>
+<li>
+                            withheldVariant - The queried domain name is a withheld
+                            variant of an existing domain name in the repository.
+                            The domain name that resulted in this name being witheld
+                            SHOULD be provided as a child 'primaryDomainName' element.
+                        
+</li>
+<li>
+                            pendingCreate - The queried domain name is available for
+                            registration, however its approval is subject to the outcome
+                            of an offline process. If the registry is not currently
+                            accepting registrations, the date and time from which the
+                            domain name can be registered MAY be provided as a child
+                            element of this state.
+                        
+</li>
+</ul><p>
+                
+</p>
+<a name="anchor5"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2.2"></a><h3>2.2.&nbsp;
+Phase Identifier</h3>
+
+<p>
+                    The identifier of the phase in which an application
+                    for the queried domain name can be submitted.
+                    The phase identifier is as described in
+                    <a class='info' href='#AR-APP-1.0'>EPP Domain Application Mapping<span> (</span><span class='info'>Mitchell, J. and C. Wright, &ldquo;Domain Name Application Extension Mapping for the 			Extensible Provisioning 			Protocol (EPP),&rdquo; December&nbsp;2012.</span><span>)</span></a> [AR&#8209;APP&#8209;1.0]
+                
+</p>
+<a name="anchor6"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2.3"></a><h3>2.3.&nbsp;
+Reason</h3>
+
+<p>
+                    The reason explaining the unavailability of the queried domain name.
+                    This is provided when the extended availability of a domain name
+                    is "unavailable" or "invalid" or "reserved"
+                
+</p>
+<a name="anchor7"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2.4"></a><h3>2.4.&nbsp;
+Primary Domain Name</h3>
+
+<p>
+                    The queried domain name will be unavailable if it is
+                    an active, withheld or blocked variant of a domain object
+                    that exists in the repository.
+                    In such a case, the primary domain name of the variant is provided.
+                
+</p>
+<a name="anchor8"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3"></a><h3>3.&nbsp;
+EPP Command Mapping</h3>
+
+<p>
+                A detailed description of the EPP syntax and semantics can be found
+                in the
+                <a class='info' href='#RFC5731'>EPP core protocol specification<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                The command mappings described here are specifically for use in the
+                Domain Name Extended Availability Check Extension.
+            
+</p>
+<a name="anchor9"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1"></a><h3>3.1.&nbsp;
+EPP Query Commands</h3>
+
+<p>
+                    EPP provides three commands to retrieve object information:
+                    &lt;check&gt; to determine if an object is known to the server,
+                    &lt;info&gt; to retrieve detailed information associated with an
+                    object, and &lt;transfer&gt; to retrieve object transfer status
+                    information.
+                
+</p>
+<a name="anchor10"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.1"></a><h3>3.1.1.&nbsp;
+EPP &lt;check&gt; Command</h3>
+
+<p>
+                        This extension defines additional elements to extend the EPP
+                        &lt;check&gt; command and response to be used in conjunction with
+                        the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<p>
+                        To enable clients to obtain additional information about a domain names availability,
+                        the &lt;domain:check&gt; command is extended
+                        with a &lt;exAvail:check&gt; element, which signals a client's
+                        intention to retrieve extended availability information.
+                    
+</p>
+<p style='text-align: left'>
+                            Example &lt;check&gt; command requesting extended availability
+                            details
+                        
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;check&gt;
+      &lt;check xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+        &lt;name&gt;domain-avail.tld&lt;/name&gt;
+        &lt;name&gt;domain-application.tld&lt;/name&gt;
+        &lt;name&gt;domain-inuse.tld&lt;/name&gt;
+        &lt;name&gt;domain-blocked-by-application.tld&lt;/name&gt;
+        &lt;name&gt;domain-reserved.tld&lt;/name&gt;
+        &lt;name&gt;domain-inval!d.tld&lt;/name&gt;
+        &lt;name&gt;domain-variant.tld&lt;/name&gt;
+        &lt;name&gt;domain-VaRiAnT.tld&lt;/name&gt;
+        &lt;name&gt;DOMAIN-variant.tld&lt;/name&gt;
+        &lt;name&gt;domain-pendingCreate.tld&lt;/name&gt;
+      &lt;/check&gt;
+    &lt;/check&gt;
+    &lt;extension&gt;
+      &lt;check xmlns="urn:ar:params:xml:ns:exAvail-1.0" /&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+                        When a &lt;check&gt; command containing the &lt;exAvail:check&gt;
+                        element has been processed successfully, the server MUST NOT
+                        respond with the &lt;domain:chkData&gt; element described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                        Instead, servers must respond with a &lt;exAvail:chkData&gt; element
+                        that contains one &lt;exAvail:cd&gt; element for each domain name
+                        present in the command. The &lt;exAvail:cd&gt; element contains the
+                        following child elements:
+                        </p>
+<ul class="text">
+<li>
+                                A &lt;exAvail:name&gt; element containing a domain name from the
+                                corresponding command. The order and composition of domain names
+                                in the response MUST be the same as the order and composition of
+                                domain names provided in the command, with exception to
+                                transformations required of validating XML parsers.
+                            
+</li>
+<li>
+                                A &lt;exAvail:state&gt; element containing the extended
+                                availability details of the domain name.
+                                A MANDATORY "s" attribute describes the extended
+                                availability state of the queried domain name.
+                                To describe the availability in more detail the
+                                &lt;exAvail:state&gt; element MAY also contain one
+                                of the following child elements depending on the state:
+                                
+<ul class="text">
+<li>
+                                        An OPTIONAL &lt;exAvail:phase&gt; element containing the
+                                        phase identifier of the phase in which an application
+                                        can be submitted for the domain name.
+                                        This information is only supplied when the domain name
+                                        is available as an application.
+                                    
+</li>
+<li>
+                                        An OPTIONAL &lt;exAvail:date&gt; element containing
+                                        the date time from which the domain name can be provisioned
+                                        as a domain object or an application object.
+                                        The type that the object can be provisioned as can
+                                        be determined by the value of the &lt;exAvail:state&gt;
+                                        element's "s" attribute.
+                                        If this element exists, it is an indication that the
+                                        domain name is not available at the time of the
+                                        extended availability check query, but in the future
+                                        from the date time of this element.
+                                    
+</li>
+<li>
+                                        An OPTIONAL &lt;exAvail:reason&gt; element containing
+                                        the reason of unavailability.
+                                        This element is provided when the domain is unavailable
+                                        as it is blocked by another object in the repository or
+                                        due to server policy i.e., when the domain extended
+                                        availability state is "unavailable", "invalid" or "reserved".
+                                    
+</li>
+<li>
+                                        An OPTIONAL &lt;exAvail:primaryDomainName&gt; element
+                                        containing the primary domain name of the variant
+                                        that is blocking the provisioning of the domain name.
+                                        This is provided when the domain name queried for
+                                        is an active, withheld or blocked variant of a domain
+                                        object that exists in the repository.
+                                    
+</li>
+</ul>
+                            
+</li>
+</ul><p>
+                    
+</p>
+<p>
+                            Example &lt;check&gt; response containing the extended availability
+                            details
+                        
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+&lt;response&gt;
+ &lt;result code="1000"&gt;
+   &lt;msg lang="en"&gt;Command completed successfully&lt;/msg&gt;
+ &lt;/result&gt;
+ &lt;extension&gt;
+  &lt;chkData xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0"&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-avail.tld&lt;/name&gt;
+   &lt;state s="available"&gt;
+    &lt;date&gt;2012-10-20T00:00:00Z&lt;/date&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-application.tld&lt;/name&gt;
+   &lt;state s="application"&gt;
+    &lt;phase&gt;sunrise&lt;/exAvil:phase&gt;
+    &lt;date&gt;2012-10-20T00:00:00Z&lt;/date&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-inuse.tld&lt;/name&gt;
+   &lt;state s="unavailable"&gt;
+    &lt;reason&gt;In use&lt;/reason&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-blocked-by-application.tld&lt;/name&gt;
+   &lt;state s="unavailable"&gt;
+    &lt;reason&gt;Blocked by application&lt;/reason&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-reserved.tld&lt;/name&gt;
+   &lt;state s="reserved"&gt;
+    &lt;reason&gt;ICANN Reserved&lt;/reason&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-inval!d.tld&lt;/name&gt;
+   &lt;state s="inValid"&gt;
+    &lt;reason&gt;Invalid domain name&lt;/reason&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-variant.tld&lt;/name&gt;
+   &lt;state s="activatedVariant"&gt;
+    &lt;primaryDomainName&gt;domain-VARIANT.tld&lt;/primaryDomainName&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-VaRiAnT.tld&lt;/name&gt;
+   &lt;state s="withheldVariant"&gt;
+    &lt;primaryDomainName&gt;domain-VARIANT.tld&lt;/primaryDomainName&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;DOMAIN-variant.tld&lt;/name&gt;
+   &lt;state s="blockedVariant"&gt;
+    &lt;primaryDomainName&gt;domain-VARIANT.tld&lt;/primaryDomainName&gt;
+   &lt;/state&gt;
+  &lt;/cd&gt;
+  &lt;cd&gt;
+   &lt;name&gt;domain-pendingCreate.tld&lt;/name&gt;
+   &lt;state s="pendingCreate" /&gt;
+  &lt;/cd&gt;
+ &lt;/chkData&gt;
+ &lt;/extension&gt;
+ &lt;trID&gt;
+  &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;svTRID&gt;57f39ac6-abd2-4fea-9a80-e791d1af86f7&lt;/svTRID&gt;
+ &lt;/trID&gt;
+&lt;/response&gt;
+&lt;/epp&gt;
+</pre></div>
+<a name="anchor11"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.2"></a><h3>3.1.2.&nbsp;
+EPP &lt;info&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;info&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor12"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.3"></a><h3>3.1.3.&nbsp;
+EPP &lt;transfer&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;transfer&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor13"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2"></a><h3>3.2.&nbsp;
+EPP Transform Commands</h3>
+
+<p>
+                    EPP provides five commands to transform objects: &lt;create&gt;
+                    to create an instance of an object, &lt;delete&gt; to delete an
+                    instance of an object, &lt;renew&gt; to extend the validity period
+                    of an object, &lt;transfer&gt; to manage object sponsorship
+                    changes, and &lt;update&gt; to change information associated with
+                    an object.
+                
+</p>
+<a name="anchor14"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.1"></a><h3>3.2.1.&nbsp;
+EPP &lt;create&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;create&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor15"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.2"></a><h3>3.2.2.&nbsp;
+EPP &lt;delete&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;delete&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor16"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.3"></a><h3>3.2.3.&nbsp;
+EPP &lt;renew&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;renew&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor17"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.4"></a><h3>3.2.4.&nbsp;
+EPP &lt;transfer&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;transfer&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor18"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.5"></a><h3>3.2.5.&nbsp;
+EPP &lt;update&gt; Command</h3>
+
+<p>
+                        This extension does not define any extension to the EPP
+                        &lt;update&gt; command or response described in the
+                        <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<a name="anchor19"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.4"></a><h3>4.&nbsp;
+Formal Syntax</h3>
+
+<p>
+                    An EPP object mapping is specified in XML Schema notation. The
+                    formal syntax presented here is a complete schema representation of
+                    the object mapping, suitable for automated validation of EPP XML
+                    instances.
+                
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schema targetNamespace="urn:ar:params:xml:ns:exAvail-1.0"
+        xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0"
+        xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified"&gt;
+
+ &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/&gt;
+
+ &lt;!-- Custom Extensions found in EPP commands. --&gt;
+ &lt;element name="check"/&gt;
+
+ &lt;!-- Child response elements.--&gt;
+ &lt;element name="chkData" type="exAvail:chkDataType"/&gt;
+
+ &lt;complexType name="chkDataType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="cd" type="exAvail:checkType"
+                     maxOccurs="unbounded"/&gt;
+        &lt;/sequence&gt;
+ &lt;/complexType&gt;
+
+ &lt;complexType name="checkType"&gt;
+    &lt;sequence&gt;
+        &lt;element name="name" type="eppcom:labelType"/&gt;
+        &lt;element name="state" type="exAvail:checkStateType"/&gt;
+    &lt;/sequence&gt;
+ &lt;/complexType&gt;
+
+ &lt;complexType name="checkStateType"&gt;
+    &lt;choice&gt;
+        &lt;sequence&gt;
+            &lt;element name="reason" type="eppcom:reasonType"
+                     minOccurs="0"/&gt;
+        &lt;/sequence&gt;
+        &lt;sequence&gt;
+            &lt;element name="phase" type="eppcom:labelType"
+                     minOccurs="0"/&gt;
+            &lt;element name="date" type="dateTime"
+                     minOccurs="0"/&gt;
+        &lt;/sequence&gt;
+        &lt;sequence&gt;
+            &lt;element name="primaryDomainName"
+                     type="eppcom:labelType"/&gt;
+        &lt;/sequence&gt;
+        &lt;/choice&gt;
+        &lt;attribute name="s" type="exAvail:stateValueType"
+                   use="required"/&gt;
+ &lt;/complexType&gt;
+
+ &lt;simpleType name="stateValueType"&gt;
+    &lt;restriction base="token"&gt;
+        &lt;enumeration value="available"/&gt;
+        &lt;enumeration value="application"/&gt;
+        &lt;enumeration value="unavailable"/&gt;
+        &lt;enumeration value="reserved"/&gt;
+        &lt;enumeration value="invalid"/&gt;
+        &lt;enumeration value="activatedVariant"/&gt;
+        &lt;enumeration value="withheldVariant"/&gt;
+        &lt;enumeration value="blockedVariant"/&gt;
+        &lt;enumeration value="pendingCreate"/&gt;
+    &lt;/restriction&gt;
+ &lt;/simpleType&gt;
+&lt;/schema&gt;
+</pre></div>
+<a name="anchor20"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5"></a><h3>5.&nbsp;
+Security Considerations</h3>
+
+<p>
+                    The mapping extensions described in this document do not provide any
+                    security services beyond those described by
+                    <a class='info' href='#RFC5730'>EPP<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5730],
+                    the
+                    <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731],
+                    and protocol layers used by EPP. The security considerations
+                    described in these other specifications also apply to this
+                    specification.
+                
+</p>
+<a name="rfc.references"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.6"></a><h3>6.&nbsp;
+References</h3>
+
+<a name="rfc.references1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<h3>6.1.&nbsp;Normative References</h3>
+<table width="99%" border="0">
+<tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
+<td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="RFC5730">[RFC5730]</a></td>
+<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5730">Extensible Provisioning Protocol (EPP)</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5730, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5730.txt">TXT</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="RFC5731">[RFC5731]</a></td>
+<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5731">Extensible Provisioning Protocol (EPP) Domain Name Mapping</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5731, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5731.txt">TXT</a>).</td></tr>
+</table>
+
+<a name="rfc.references2"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<h3>6.2.&nbsp;Informative References</h3>
+<table width="99%" border="0">
+<tr><td class="author-text" valign="top"><a name="AR-APP-1.0">[AR-APP-1.0]</a></td>
+<td class="author-text"><a href="mailto:james.mitchell@ausregistry.com">Mitchell, J.</a> and <a href="mailto:chris@ausregistry.com">C. Wright</a>, &ldquo;Domain Name Application Extension Mapping for the
+			Extensible Provisioning
+			Protocol (EPP),&rdquo; December&nbsp;2012.</td></tr>
+</table>
+
+<a name="rfc.authors"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<h3>Authors' Addresses</h3>
+<table width="99%" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">James Mitchell</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AusRegistry</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">8/10 Queens Road</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Melbourne, Victoria  3004</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AU</td></tr>
+<tr><td class="author" align="right">Email:&nbsp;</td>
+<td class="author-text"><a href="mailto:james.mitchell@ausregistry.com">james.mitchell@ausregistry.com</a></td></tr>
+<tr><td class="author" align="right">URI:&nbsp;</td>
+<td class="author-text"><a href="www.ausregistry.com">www.ausregistry.com</a></td></tr>
+<tr cellpadding="3"><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Chris Wright</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AusRegistry</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">8/10 Queens Road</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Melbourne, Victoria  3004</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AU</td></tr>
+<tr><td class="author" align="right">Email:&nbsp;</td>
+<td class="author-text"><a href="mailto:chris@ausregistry.com">chris@ausregistry.com</a></td></tr>
+<tr><td class="author" align="right">URI:&nbsp;</td>
+<td class="author-text"><a href="www.ausregistry.com">www.ausregistry.com</a></td></tr>
+</table>
+</body></html>

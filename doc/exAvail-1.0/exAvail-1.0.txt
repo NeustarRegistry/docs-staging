@@ -1,0 +1,672 @@
+
+
+
+Internet Engineering Task Force                              J. Mitchell
+Internet-Draft                                                 C. Wright
+Intended status: Experimental                                AusRegistry
+Expires: November 2, 2013                                       May 2013
+
+
+ Domain Name Extended Availability Extension Mapping for the Extensible
+                      Provisioning Protocol (EPP)
+                    draft-ar-exAvail-epp-mapping-01
+
+Abstract
+
+   This document describes extensions to the Extensible Provisioning
+   Protocol (EPP) for obtaining detailed availability information of
+   domain names.
+
+Status of this Memo
+
+   This document is an Internet-Draft and is NOT offered in accordance
+   with Section 10 of RFC 2026, and the author does not provide the IETF
+   with any rights other than to publish as an Internet-Draft.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on November 2, 2013.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 1]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+Table of Contents
+
+   1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     1.1.  Conventions Used in This Document  . . . . . . . . . . . .  3
+   2.  Extended Availability Details  . . . . . . . . . . . . . . . .  3
+     2.1.  State  . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     2.2.  Phase Identifier . . . . . . . . . . . . . . . . . . . . .  5
+     2.3.  Reason . . . . . . . . . . . . . . . . . . . . . . . . . .  5
+     2.4.  Primary Domain Name  . . . . . . . . . . . . . . . . . . .  5
+   3.  EPP Command Mapping  . . . . . . . . . . . . . . . . . . . . .  5
+     3.1.  EPP Query Commands . . . . . . . . . . . . . . . . . . . .  5
+       3.1.1.  EPP <check> Command  . . . . . . . . . . . . . . . . .  5
+       3.1.2.  EPP <info> Command . . . . . . . . . . . . . . . . . .  9
+       3.1.3.  EPP <transfer> Command . . . . . . . . . . . . . . . .  9
+     3.2.  EPP Transform Commands . . . . . . . . . . . . . . . . . .  9
+       3.2.1.  EPP <create> Command . . . . . . . . . . . . . . . . .  9
+       3.2.2.  EPP <delete> Command . . . . . . . . . . . . . . . . .  9
+       3.2.3.  EPP <renew> Command  . . . . . . . . . . . . . . . . .  9
+       3.2.4.  EPP <transfer> Command . . . . . . . . . . . . . . . . 10
+       3.2.5.  EPP <update> Command . . . . . . . . . . . . . . . . . 10
+   4.  Formal Syntax  . . . . . . . . . . . . . . . . . . . . . . . . 10
+   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 11
+   6.  References . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+     6.1.  Normative References . . . . . . . . . . . . . . . . . . . 12
+     6.2.  Informative References . . . . . . . . . . . . . . . . . . 12
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 2]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+1.  Introduction
+
+   The check command described in EPP Domain Name Mapping [RFC5731]
+   provides a hint to determine a domain object's availability.  This
+   works well in providing basic information for the client to
+   anticipate the success or failure of registering a domain using the
+   <create> command.  To provide a more rich user interface to potential
+   registrants, clients require more detailed information regarding
+   object availability than available through a binary yes/no response.
+
+   This document describes extensions to the Extensible Provisioning
+   Protocol (EPP) for clients to obtain extended details regarding the
+   availability of domain names.
+
+   This extension can be used when more detailed information is required
+   about the availability of a domain name.
+
+1.1.  Conventions Used in This Document
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [RFC2119].
+
+   "exAvail-1.0" is used as an abbreviation for
+   "urn:ar:params:xml:ns:exAvail-1.0".  The XML namespace prefix
+   "exAvail" is used, but implementations MUST NOT depend on it and
+   instead employ a proper namespace-aware XML parser and serializer to
+   interpret and output the XML documents.
+
+   In this document english words with letters of different cases are
+   used to indicate variants, even though these don't indicate variants
+   in a real registry.
+
+
+2.  Extended Availability Details
+
+   To provide more details about the availability of a domain object,
+   this extension adds additional elements to the EPP Domain Name
+   Mapping [RFC5731].  Only those new elements are described here.
+
+2.1.  State
+
+   The extended availability details of a domain name are provided using
+   the state element.  A MANDATORY "s" attribute describes the extended
+   availability state of the queried domain name.  The list of extended
+   availability states with a description of any child elements of this
+   state element are provided below:
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 3]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+   o  available - The queried domain name is available to be registered
+      as a domain object with immediate effect.  If the registry is
+      currently not accepting registrations, the date and time from
+      which the domain name can be registered MAY be provided as a child
+      element of this state.
+
+   o  application - The queried domain name is available to be
+      registered only as a domain application object.  The identifier of
+      the phase in which a domain application can be submitted for this
+      domain name is provided in a child element.  If the registry is
+      not currently accepting applications, the date and time from which
+      an application can be submitted MAY be provided as a child element
+      of this state.
+
+   o  unavailable - The queried domain name meets the composition
+      requirements for domain names, however not available to be
+      registered as either a domain object or a domain application
+      object.  The reason of unavailability for this domain name MAY be
+      provided as a child element of this state.
+
+   o  reserved - The queried domain name is reserved by server policy
+      and is not available for registration.  The server specific reason
+      for the reservation of this label MAY be provided as a child
+      element of this state.
+
+   o  invalid - The queried domain name does not meet the composition
+      requirements for domain names and is not available for
+      registration as either a domain object or a domain application
+      object.
+
+   o  activatedVariant - The queried domain name is an activated variant
+      of another domain name in the repository.  The domain name that
+      resulted in the activation of this variant SHOULD be provided as a
+      child 'primaryDomainName' element of this state.
+
+   o  blockedVariant - The queried domain name is a blocked variant of
+      another domain name in the repository.  The domain name that
+      resulted in this variant getting blocked SHOULD be provided as a
+      child 'primaryDomainName' element.
+
+   o  withheldVariant - The queried domain name is a withheld variant of
+      an existing domain name in the repository.  The domain name that
+      resulted in this name being witheld SHOULD be provided as a child
+      'primaryDomainName' element.
+
+   o  pendingCreate - The queried domain name is available for
+      registration, however its approval is subject to the outcome of an
+      offline process.  If the registry is not currently accepting
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 4]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+      registrations, the date and time from which the domain name can be
+      registered MAY be provided as a child element of this state.
+
+2.2.  Phase Identifier
+
+   The identifier of the phase in which an application for the queried
+   domain name can be submitted.  The phase identifier is as described
+   in EPP Domain Application Mapping [AR-APP-1.0]
+
+2.3.  Reason
+
+   The reason explaining the unavailability of the queried domain name.
+   This is provided when the extended availability of a domain name is
+   "unavailable" or "invalid" or "reserved"
+
+2.4.  Primary Domain Name
+
+   The queried domain name will be unavailable if it is an active,
+   withheld or blocked variant of a domain object that exists in the
+   repository.  In such a case, the primary domain name of the variant
+   is provided.
+
+
+3.  EPP Command Mapping
+
+   A detailed description of the EPP syntax and semantics can be found
+   in the EPP core protocol specification [RFC5731].  The command
+   mappings described here are specifically for use in the Domain Name
+   Extended Availability Check Extension.
+
+3.1.  EPP Query Commands
+
+   EPP provides three commands to retrieve object information: <check>
+   to determine if an object is known to the server, <info> to retrieve
+   detailed information associated with an object, and <transfer> to
+   retrieve object transfer status information.
+
+3.1.1.  EPP <check> Command
+
+   This extension defines additional elements to extend the EPP <check>
+   command and response to be used in conjunction with the EPP Domain
+   Name Mapping [RFC5731].
+
+   To enable clients to obtain additional information about a domain
+   names availability, the <domain:check> command is extended with a
+   <exAvail:check> element, which signals a client's intention to
+   retrieve extended availability information.
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 5]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+   Example <check> command requesting extended availability details
+
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <check>
+         <check xmlns="urn:ietf:params:xml:ns:domain-1.0">
+           <name>domain-avail.tld</name>
+           <name>domain-application.tld</name>
+           <name>domain-inuse.tld</name>
+           <name>domain-blocked-by-application.tld</name>
+           <name>domain-reserved.tld</name>
+           <name>domain-inval!d.tld</name>
+           <name>domain-variant.tld</name>
+           <name>domain-VaRiAnT.tld</name>
+           <name>DOMAIN-variant.tld</name>
+           <name>domain-pendingCreate.tld</name>
+         </check>
+       </check>
+       <extension>
+         <check xmlns="urn:ar:params:xml:ns:exAvail-1.0" />
+       </extension>
+       <clTRID>ABC-12345</clTRID>
+     </command>
+   </epp>
+
+   When a <check> command containing the <exAvail:check> element has
+   been processed successfully, the server MUST NOT respond with the
+   <domain:chkData> element described in the EPP Domain Name Mapping
+   [RFC5731].  Instead, servers must respond with a <exAvail:chkData>
+   element that contains one <exAvail:cd> element for each domain name
+   present in the command.  The <exAvail:cd> element contains the
+   following child elements:
+
+   o  A <exAvail:name> element containing a domain name from the
+      corresponding command.  The order and composition of domain names
+      in the response MUST be the same as the order and composition of
+      domain names provided in the command, with exception to
+      transformations required of validating XML parsers.
+
+   o  A <exAvail:state> element containing the extended availability
+      details of the domain name.  A MANDATORY "s" attribute describes
+      the extended availability state of the queried domain name.  To
+      describe the availability in more detail the <exAvail:state>
+      element MAY also contain one of the following child elements
+      depending on the state:
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 6]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+      *  An OPTIONAL <exAvail:phase> element containing the phase
+         identifier of the phase in which an application can be
+         submitted for the domain name.  This information is only
+         supplied when the domain name is available as an application.
+
+      *  An OPTIONAL <exAvail:date> element containing the date time
+         from which the domain name can be provisioned as a domain
+         object or an application object.  The type that the object can
+         be provisioned as can be determined by the value of the
+         <exAvail:state> element's "s" attribute.  If this element
+         exists, it is an indication that the domain name is not
+         available at the time of the extended availability check query,
+         but in the future from the date time of this element.
+
+      *  An OPTIONAL <exAvail:reason> element containing the reason of
+         unavailability.  This element is provided when the domain is
+         unavailable as it is blocked by another object in the
+         repository or due to server policy i.e., when the domain
+         extended availability state is "unavailable", "invalid" or
+         "reserved".
+
+      *  An OPTIONAL <exAvail:primaryDomainName> element containing the
+         primary domain name of the variant that is blocking the
+         provisioning of the domain name.  This is provided when the
+         domain name queried for is an active, withheld or blocked
+         variant of a domain object that exists in the repository.
+
+   Example <check> response containing the extended availability details
+
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+   <response>
+    <result code="1000">
+      <msg lang="en">Command completed successfully</msg>
+    </result>
+    <extension>
+     <chkData xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0">
+     <cd>
+      <name>domain-avail.tld</name>
+      <state s="available">
+       <date>2012-10-20T00:00:00Z</date>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-application.tld</name>
+      <state s="application">
+       <phase>sunrise</exAvil:phase>
+       <date>2012-10-20T00:00:00Z</date>
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 7]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+      </state>
+     </cd>
+     <cd>
+      <name>domain-inuse.tld</name>
+      <state s="unavailable">
+       <reason>In use</reason>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-blocked-by-application.tld</name>
+      <state s="unavailable">
+       <reason>Blocked by application</reason>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-reserved.tld</name>
+      <state s="reserved">
+       <reason>ICANN Reserved</reason>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-inval!d.tld</name>
+      <state s="inValid">
+       <reason>Invalid domain name</reason>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-variant.tld</name>
+      <state s="activatedVariant">
+       <primaryDomainName>domain-VARIANT.tld</primaryDomainName>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-VaRiAnT.tld</name>
+      <state s="withheldVariant">
+       <primaryDomainName>domain-VARIANT.tld</primaryDomainName>
+      </state>
+     </cd>
+     <cd>
+      <name>DOMAIN-variant.tld</name>
+      <state s="blockedVariant">
+       <primaryDomainName>domain-VARIANT.tld</primaryDomainName>
+      </state>
+     </cd>
+     <cd>
+      <name>domain-pendingCreate.tld</name>
+      <state s="pendingCreate" />
+     </cd>
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 8]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+    </chkData>
+    </extension>
+    <trID>
+     <clTRID>ABC-12345</clTRID>
+     <svTRID>57f39ac6-abd2-4fea-9a80-e791d1af86f7</svTRID>
+    </trID>
+   </response>
+   </epp>
+
+3.1.2.  EPP <info> Command
+
+   This extension does not define any extension to the EPP <info>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.1.3.  EPP <transfer> Command
+
+   This extension does not define any extension to the EPP <transfer>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.  EPP Transform Commands
+
+   EPP provides five commands to transform objects: <create> to create
+   an instance of an object, <delete> to delete an instance of an
+   object, <renew> to extend the validity period of an object,
+   <transfer> to manage object sponsorship changes, and <update> to
+   change information associated with an object.
+
+3.2.1.  EPP <create> Command
+
+   This extension does not define any extension to the EPP <create>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.2.  EPP <delete> Command
+
+   This extension does not define any extension to the EPP <delete>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.3.  EPP <renew> Command
+
+   This extension does not define any extension to the EPP <renew>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013                [Page 9]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+3.2.4.  EPP <transfer> Command
+
+   This extension does not define any extension to the EPP <transfer>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.5.  EPP <update> Command
+
+   This extension does not define any extension to the EPP <update>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+
+4.  Formal Syntax
+
+   An EPP object mapping is specified in XML Schema notation.  The
+   formal syntax presented here is a complete schema representation of
+   the object mapping, suitable for automated validation of EPP XML
+   instances.
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <schema targetNamespace="urn:ar:params:xml:ns:exAvail-1.0"
+           xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0"
+           xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+           xmlns="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"/>
+
+    <!-- Custom Extensions found in EPP commands. -->
+    <element name="check"/>
+
+    <!-- Child response elements.-->
+    <element name="chkData" type="exAvail:chkDataType"/>
+
+    <complexType name="chkDataType">
+           <sequence>
+               <element name="cd" type="exAvail:checkType"
+                        maxOccurs="unbounded"/>
+           </sequence>
+    </complexType>
+
+    <complexType name="checkType">
+       <sequence>
+           <element name="name" type="eppcom:labelType"/>
+           <element name="state" type="exAvail:checkStateType"/>
+       </sequence>
+    </complexType>
+
+
+
+Mitchell & Wright       Expires November 2, 2013               [Page 10]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+    <complexType name="checkStateType">
+       <choice>
+           <sequence>
+               <element name="reason" type="eppcom:reasonType"
+                        minOccurs="0"/>
+           </sequence>
+           <sequence>
+               <element name="phase" type="eppcom:labelType"
+                        minOccurs="0"/>
+               <element name="date" type="dateTime"
+                        minOccurs="0"/>
+           </sequence>
+           <sequence>
+               <element name="primaryDomainName"
+                        type="eppcom:labelType"/>
+           </sequence>
+           </choice>
+           <attribute name="s" type="exAvail:stateValueType"
+                      use="required"/>
+    </complexType>
+
+    <simpleType name="stateValueType">
+       <restriction base="token">
+           <enumeration value="available"/>
+           <enumeration value="application"/>
+           <enumeration value="unavailable"/>
+           <enumeration value="reserved"/>
+           <enumeration value="invalid"/>
+           <enumeration value="activatedVariant"/>
+           <enumeration value="withheldVariant"/>
+           <enumeration value="blockedVariant"/>
+           <enumeration value="pendingCreate"/>
+       </restriction>
+    </simpleType>
+   </schema>
+
+
+5.  Security Considerations
+
+   The mapping extensions described in this document do not provide any
+   security services beyond those described by EPP [RFC5730], the EPP
+   Domain Name Mapping [RFC5731], and protocol layers used by EPP.  The
+   security considerations described in these other specifications also
+   apply to this specification.
+
+
+6.  References
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013               [Page 11]
+
+Internet-Draft  EPP Domain Extended availability Mapping        May 2013
+
+
+6.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+   [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
+              STD 69, RFC 5730, August 2009.
+
+   [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
+              Domain Name Mapping", STD 69, RFC 5731, August 2009.
+
+6.2.  Informative References
+
+   [AR-APP-1.0]
+              Mitchell, J. and C. Wright, "Domain Name Application
+              Extension Mapping for the Extensible Provisioning Protocol
+              (EPP)", December 2012.
+
+
+Authors' Addresses
+
+   James Mitchell
+   AusRegistry
+   8/10 Queens Road
+   Melbourne, Victoria  3004
+   AU
+
+   Email: james.mitchell@ausregistry.com
+   URI:   www.ausregistry.com
+
+
+   Chris Wright
+   AusRegistry
+   8/10 Queens Road
+   Melbourne, Victoria  3004
+   AU
+
+   Email: chris@ausregistry.com
+   URI:   www.ausregistry.com
+
+
+
+
+
+
+
+
+
+
+
+
+Mitchell & Wright       Expires November 2, 2013               [Page 12]
+

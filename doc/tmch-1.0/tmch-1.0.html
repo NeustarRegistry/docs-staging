@@ -163,8 +163,10 @@
 </p>
 <h3>Status of this Memo</h3>
 <p>
-This Internet-Draft is submitted  in full
-conformance with the provisions of BCP&nbsp;78 and BCP&nbsp;79.</p>
+This document is an Internet-Draft and is
+NOT offered in accordance with Section&nbsp;10 of RFC&nbsp;2026,
+and the author does not provide the IETF with any rights other
+than to publish as an Internet-Draft.</p>
 <p>
 Internet-Drafts are working documents of the Internet Engineering
 Task Force (IETF).  Note that other groups may also distribute
@@ -177,21 +179,6 @@ It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
 This Internet-Draft will expire on June 4, 2013.</p>
-
-<h3>Copyright Notice</h3>
-<p>
-Copyright (c) 2012 IETF Trust and the persons identified as the
-document authors.  All rights reserved.</p>
-<p>
-This document is subject to BCP 78 and the IETF Trust's Legal
-Provisions Relating to IETF Documents
-(http://trustee.ietf.org/license-info) in effect on the date of
-publication of this document.  Please review these documents
-carefully, as they describe your rights and restrictions with respect
-to this document. Code Components extracted from this document must
-include Simplified BSD License text as described in Section 4.e of
-the Trust Legal Provisions and are provided without warranty as
-described in the Simplified BSD License.</p>
 <a name="toc"></a><br /><hr />
 <h3>Table of Contents</h3>
 <p class="toc">
@@ -214,52 +201,46 @@ Object Attributes<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">3.1.</a>&nbsp;
 Signed Mark Data<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">3.2.</a>&nbsp;
-Claims Key<br />
+Claims Lookup Key<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">3.3.</a>&nbsp;
 Notice Identifier<br />
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">3.4.</a>&nbsp;
-Source Address<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor13">3.5.</a>&nbsp;
 Dates and Times<br />
-<a href="#anchor14">4.</a>&nbsp;
+<a href="#anchor13">4.</a>&nbsp;
 EPP Command Mapping<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor15">4.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor14">4.1.</a>&nbsp;
 EPP Query Commands<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor16">4.1.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor15">4.1.1.</a>&nbsp;
 EPP &lt;check&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor17">4.1.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor16">4.1.2.</a>&nbsp;
 EPP &lt;info&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor18">4.1.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor17">4.1.3.</a>&nbsp;
 EPP &lt;transfer&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor19">4.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor18">4.2.</a>&nbsp;
 EPP Transform Commands<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor20">4.2.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor19">4.2.1.</a>&nbsp;
 EPP &lt;create&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor21">4.2.1.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor20">4.2.1.1.</a>&nbsp;
 Sunrise Domain Create<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor22">4.2.1.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor21">4.2.1.2.</a>&nbsp;
 TM Claims Domain Create<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor23">4.2.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor22">4.2.2.</a>&nbsp;
 EPP &lt;delete&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor24">4.2.3.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor23">4.2.3.</a>&nbsp;
 EPP &lt;renew&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor25">4.2.4.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor24">4.2.4.</a>&nbsp;
 EPP &lt;transfer&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor26">4.2.5.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor25">4.2.5.</a>&nbsp;
 EPP &lt;update&gt; Command<br />
-<a href="#anchor27">5.</a>&nbsp;
+<a href="#anchor26">5.</a>&nbsp;
 Formal Syntax<br />
-<a href="#anchor28">6.</a>&nbsp;
-IANA Considerations<br />
-<a href="#anchor29">7.</a>&nbsp;
+<a href="#anchor27">6.</a>&nbsp;
 Security Considerations<br />
-<a href="#anchor30">8.</a>&nbsp;
-Revision Changes<br />
-<a href="#rfc.references1">9.</a>&nbsp;
+<a href="#rfc.references1">7.</a>&nbsp;
 References<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references1">9.1.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references1">7.1.</a>&nbsp;
 Normative References<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references2">9.2.</a>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#rfc.references2">7.2.</a>&nbsp;
 Informative References<br />
 <a href="#appendixA">Appendix&nbsp;A.</a>&nbsp;
 TMCH Sunrise Domain Application Example<br />
@@ -283,20 +264,19 @@ Introduction</h3>
 <p>
 				This document decouples the sunrise and trademark claims processes
 				from the domain name allocation processes used by the registry. The
-				<a class='info' href='#RBP-APP-1.0'>EPP Domain Application Mapping<span> (</span><span class='info'>Mitchell, J. and C. Wright, &ldquo;Domain Name Application Extension Mapping for the 			Extensible Provisioning 			Protocol (EPP),&rdquo; December&nbsp;2012.</span><span>)</span></a> [RBP&#8209;APP&#8209;1.0]
+				<a class='info' href='#AR-APP-1.0'>EPP Domain Application Mapping<span> (</span><span class='info'>Mitchell, J. and C. Wright, &ldquo;Domain Name Application Extension Mapping for the 			Extensible Provisioning 			Protocol (EPP),&rdquo; December&nbsp;2012.</span><span>)</span></a> [AR&#8209;APP&#8209;1.0]
 				should be considered by registries that require
 				a process allowing
-				multiple applications for one domain name. An example illustrating
-				its use is described in
-				<a class='info' href='#appendixA'>Appendix A<span> (</span><span class='info'>TMCH Sunrise Domain Application Example</span><span>)</span></a>.
+				multiple applications for one domain name.
+				<a class='info' href='#appendixA'>Appendix A<span> (</span><span class='info'>TMCH Sunrise Domain Application Example</span><span>)</span></a> contains an example
+                illustrating the use of the two mappings together in one command.
 			
 </p>
 <p>
 				Readers should be familiar with trademark clearinghouse processes
 				and their implications on registries and the registration process.
-				Access to detailed information on the trademark clearinghouse can be
-				found at
-				[http://newgtlds.icann.org/en/about/trademark-clearinghouse].
+				Refer to ICANN's page on <a class='info' href='#Trademark Clearinghouse'>[Trademark Clearinghouse]<span> (</span><span class='info'>, &ldquo;Trademark Clearinghouse Information,&rdquo; .</span><span>)</span></a>
+                for detailed information
 			
 </p>
 <a name="anchor2"></a><br /><hr />
@@ -348,17 +328,7 @@ Sunrise</h3>
 					in Sunrise. The scope of qualification is defined in ICANN policy
 					and outside this specification. This specification simply details
 					the mechanism by which this qualification is communicated with the
-					TLD operator using the EPP protocol.
-				
-</p>
-<p>
-					The TMCH is responsible for the generation of Signed Mark Data
-					(SMD) files for mark holders that meet the requirements to
-					participate in a sunrise as specified in the guidebook. This
-					extension makes no attempt to define the format of the SMD, instead
-					provides only a mechanism for its transport from registrars to
-					registries. It is expected that the trademark clearinghouse
-					provider will publish the format of the SMD.
+					registry using the EPP protocol.
 				
 </p>
 <p>
@@ -403,7 +373,7 @@ Claims Acknowledgment</h3>
 <p>
 						This process requires extension to the &lt;create&gt; command as
 						described below. Registrations for domain names matching a claim
-						MUST be rejected unless the extension acknowledgement is provided.
+						MUST be rejected unless the claims acknowledgement is provided.
 					
 </p>
 <a name="anchor8"></a><br /><hr />
@@ -430,8 +400,11 @@ Signed Mark Data</h3>
 				
 </p>
 <p>
-					This specification uses the mark data as documented in
-					draft-lozano-smd. This extension requires the SMD be transmitted to
+                    The SMD is defined in
+                    <a class='info' href='#I-D.lozano-tmch-smd'>Mark and Signed Mark Objects Mapping<span> (</span><span class='info'>Lozano, G., &ldquo;Mark and Signed Mark Objects Mapping,&rdquo; March&nbsp;2013.</span><span>)</span></a> [I&#8209;D.lozano&#8209;tmch&#8209;smd],
+                    and is represented in a file as described in
+                    <a class='info' href='#I-D.lozano-tmch-func-spec'>TMCH functional specifications<span> (</span><span class='info'>Lozano, G., &ldquo;TMCH functional specifications,&rdquo; May&nbsp;2013.</span><span>)</span></a> [I&#8209;D.lozano&#8209;tmch&#8209;func&#8209;spec].
+                    This extension requires the SMD be transmitted to
 					the server encoded using Base64 for two reasons:
 					</p>
 <ul class="text">
@@ -454,14 +427,14 @@ Signed Mark Data</h3>
 <a name="anchor10"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.3.2"></a><h3>3.2.&nbsp;
-Claims Key</h3>
+Claims Lookup Key</h3>
 
 <p>
-					The claims key is an identifier returned by the server in
+					The claims lookup key is an identifier returned by the server in
 					response to a &lt;tmch:check&gt; command and used for the lookup of
-					claims information in the trademark clearinghouse. Clients SHOULD
-					NOT place any restrictions on the form and syntax of the claims
-					key.
+					claims notice information in the trademark clearinghouse.
+                    The lookup key is defined in
+                    <a class='info' href='#I-D.lozano-tmch-func-spec'>TMCH functional specifications<span> (</span><span class='info'>Lozano, G., &ldquo;TMCH functional specifications,&rdquo; May&nbsp;2013.</span><span>)</span></a> [I&#8209;D.lozano&#8209;tmch&#8209;func&#8209;spec].
 				
 </p>
 <a name="anchor11"></a><br /><hr />
@@ -473,39 +446,27 @@ Notice Identifier</h3>
 					The notice identifier is obtained by the client requesting the
 					claims notice from the trademark clearinghouse using the
 					aforementioned claims key. The notice identifier is a unique
-					identifier assigned by the TMCH to each Trademark Claims notice it
-					generates. Severs and clients SHOULD NOT place any restrictions on
-					the form and syntax of the claims key.
+					identifier assigned by the TMCH to each trademark claims notice.
+                    The notice identifier is described in
+                    <a class='info' href='#I-D.lozano-tmch-func-spec'>TMCH functional specifications<span> (</span><span class='info'>Lozano, G., &ldquo;TMCH functional specifications,&rdquo; May&nbsp;2013.</span><span>)</span></a> [I&#8209;D.lozano&#8209;tmch&#8209;func&#8209;spec].
 				
 </p>
 <a name="anchor12"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.3.4"></a><h3>3.4.&nbsp;
-Source Address</h3>
-
-<p>
-					Clients are required to provide the source address of the entity
-					that accepted the trademark claims notice. This information SHOULD
-					take the form of an internet address. The syntax for IPv4 addresses
-					SHOULD conform to [RFC0791]. The syntax for IPv6 addresses SHOULD
-					conform to [RFC5952].
-				
-</p>
-<a name="anchor13"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.3.5"></a><h3>3.5.&nbsp;
 Dates and Times</h3>
 
 <p>
 					Date and time attribute values MUST be represented in Universal
 					Coordinated Time (UTC) using the Gregorian calendar. The extended
 					date-time form using upper case "T" and "Z" characters defined in
-					[W3C.REC-xmlschema-2-20041028] MUST be used to represent date-time
+					<a class='info' href='#W3C.REC-xmlschema-2-20041028'>XML Schema Part 2: Datatypes<span> (</span><span class='info'>Biron, P. and A. Malhotra, &ldquo;XML Schema Part 2: Datatypes Second Edition,&rdquo; October&nbsp;2004.</span><span>)</span></a> [W3C.REC&#8209;xmlschema&#8209;2&#8209;20041028]
+                    MUST be used to represent date-time
 					values, as XML Schema does not support truncated date-time forms or
 					lower case "T" and "Z" characters.
 				
 </p>
-<a name="anchor14"></a><br /><hr />
+<a name="anchor13"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4"></a><h3>4.&nbsp;
 EPP Command Mapping</h3>
@@ -518,7 +479,7 @@ EPP Command Mapping</h3>
 				Trademark Clearinghouse Extension.
 			
 </p>
-<a name="anchor15"></a><br /><hr />
+<a name="anchor14"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.1"></a><h3>4.1.&nbsp;
 EPP Query Commands</h3>
@@ -531,7 +492,7 @@ EPP Query Commands</h3>
 					information.
 				
 </p>
-<a name="anchor16"></a><br /><hr />
+<a name="anchor15"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.1.1"></a><h3>4.1.1.&nbsp;
 EPP &lt;check&gt; Command</h3>
@@ -585,7 +546,7 @@ EPP &lt;check&gt; Command</h3>
 								in the response MUST be the same as the order and composition of
 								domain names provided in the command, with exception to
 								transformations required of validating XML parsers. A mandatory
-								"exists" attribute describes whether a claim exists for this
+								"claim" attribute describes whether a claim exists for this
 								name.
 							
 </li>
@@ -593,7 +554,7 @@ EPP &lt;check&gt; Command</h3>
 								A &lt;tmch:key&gt; element containing the claims key used for
 								retrieval of the claims data. This element MUST be present
 								during the Trademark Claims period where the &lt;tmch:name&gt;
-								element's "exists" attribute evaluates to true.
+								element's "claim" attribute evaluates to true.
 							
 </li>
 </ul><p>
@@ -610,14 +571,14 @@ EPP &lt;check&gt; Command</h3>
     &lt;result code="1000"&gt;
       &lt;msg&gt;Command completed successfully&lt;/msg&gt;
     &lt;/result&gt;
-    &lt;resData&gt;
+    &lt;extension&gt;
       &lt;chkData xmlns="urn:ar:params:xml:ns:tmch-1.0"&gt;
         &lt;cd&gt;
-          &lt;name exists="1"&gt;example.tld&lt;/name&gt;
+          &lt;name claim="1"&gt;example.tld&lt;/name&gt;
           &lt;key&gt;CLAIM_KEY&lt;/key&gt;
         &lt;/cd&gt;
       &lt;/chkData&gt;
-    &lt;/resData&gt;
+    &lt;/extension&gt;
     &lt;trID&gt;
       &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
       &lt;svTRID&gt;54321-XYZ&lt;/svTRID&gt;
@@ -625,7 +586,7 @@ EPP &lt;check&gt; Command</h3>
   &lt;/response&gt;
 &lt;/epp&gt;
 </pre></div>
-<a name="anchor17"></a><br /><hr />
+<a name="anchor16"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.1.2"></a><h3>4.1.2.&nbsp;
 EPP &lt;info&gt; Command</h3>
@@ -806,7 +767,7 @@ Z25hdHVyZT4KPC9zbWQ6c2lnbmVkTWFyaz4K
   &lt;/response&gt;
 &lt;/epp&gt;
 </pre></div>
-<a name="anchor18"></a><br /><hr />
+<a name="anchor17"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.1.3"></a><h3>4.1.3.&nbsp;
 EPP &lt;transfer&gt; Command</h3>
@@ -817,7 +778,7 @@ EPP &lt;transfer&gt; Command</h3>
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
 					
 </p>
-<a name="anchor19"></a><br /><hr />
+<a name="anchor18"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2"></a><h3>4.2.&nbsp;
 EPP Transform Commands</h3>
@@ -831,7 +792,7 @@ EPP Transform Commands</h3>
 					an object.
 				
 </p>
-<a name="anchor20"></a><br /><hr />
+<a name="anchor19"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.1"></a><h3>4.2.1.&nbsp;
 EPP &lt;create&gt; Command</h3>
@@ -842,7 +803,7 @@ EPP &lt;create&gt; Command</h3>
 						a sunrise or TM claims process. Both forms are described below.
 					
 </p>
-<a name="anchor21"></a><br /><hr />
+<a name="anchor20"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.1.1"></a><h3>4.2.1.1.&nbsp;
 Sunrise Domain Create</h3>
@@ -996,7 +957,7 @@ Z25hdHVyZT4KPC9zbWQ6c2lnbmVkTWFyaz4K
   &lt;/command&gt;
 &lt;/epp&gt;
 </pre></div>
-<a name="anchor22"></a><br /><hr />
+<a name="anchor21"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.1.2"></a><h3>4.2.1.2.&nbsp;
 TM Claims Domain Create</h3>
@@ -1017,25 +978,20 @@ TM Claims Domain Create</h3>
 							</p>
 <ul class="text">
 <li>
-									A &lt;tmch:noticeID&gt; element that contains the unique
+									A &lt;noticeID&gt; element that contains the unique
 									notice identifier generated by the Claims Notice Information
 									Service (CNIS).
 								
 </li>
 <li>
-									A &lt;generated&gt; element that contains the date and time
-									that the claims notice was generated.
+									A &lt;notAfter&gt; element that contains the latest date
+                                    and time up to which the claims notice can be used to register
+                                    a domain name or domain application.
 								
 </li>
 <li>
 									A &lt;accepted&gt; element that contains the date and time
 									that the claims notice was accepted.
-								
-</li>
-<li>
-									A &lt;source&gt; element that contains the source information
-									of the consumer that was displayed or that accepted the claims
-									notice, for example the consumer's IP address.
 								
 </li>
 </ul><p>
@@ -1062,16 +1018,15 @@ TM Claims Domain Create</h3>
     &lt;extension&gt;
       &lt;create xmlns="urn:ar:params:xml:ns:tmch-1.0"&gt;
         &lt;noticeID&gt;49FD46E6C4B45C55D4AC&lt;/noticeID&gt;
-        &lt;generated&gt;2012-06-19T09:00:00.0Z&lt;/generated&gt;
+        &lt;notAfter&gt;2012-06-20T09:00:00.0Z&lt;/notAfter&gt;
         &lt;accepted&gt;2012-06-19T09:00:10.0Z&lt;/accepted&gt;
-        &lt;source&gt;192.0.2.29&lt;/source&gt;
       &lt;/create&gt;
     &lt;/extension&gt;
     &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
   &lt;/command&gt;
 &lt;/epp&gt;
 </pre></div>
-<a name="anchor23"></a><br /><hr />
+<a name="anchor22"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.2"></a><h3>4.2.2.&nbsp;
 EPP &lt;delete&gt; Command</h3>
@@ -1082,7 +1037,7 @@ EPP &lt;delete&gt; Command</h3>
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
 					
 </p>
-<a name="anchor24"></a><br /><hr />
+<a name="anchor23"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.3"></a><h3>4.2.3.&nbsp;
 EPP &lt;renew&gt; Command</h3>
@@ -1093,7 +1048,7 @@ EPP &lt;renew&gt; Command</h3>
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
 					
 </p>
-<a name="anchor25"></a><br /><hr />
+<a name="anchor24"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.4"></a><h3>4.2.4.&nbsp;
 EPP &lt;transfer&gt; Command</h3>
@@ -1104,7 +1059,7 @@ EPP &lt;transfer&gt; Command</h3>
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
 					
 </p>
-<a name="anchor26"></a><br /><hr />
+<a name="anchor25"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.4.2.5"></a><h3>4.2.5.&nbsp;
 EPP &lt;update&gt; Command</h3>
@@ -1115,7 +1070,7 @@ EPP &lt;update&gt; Command</h3>
 						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
 					
 </p>
-<a name="anchor27"></a><br /><hr />
+<a name="anchor26"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 Formal Syntax</h3>
@@ -1140,9 +1095,8 @@ Formal Syntax</h3>
       &lt;/element&gt;
       &lt;sequence&gt;
         &lt;element name="noticeID" type="token" /&gt;
-        &lt;element name="generated" type="dateTime" /&gt;
+        &lt;element name="notAfter" type="dateTime" /&gt;
         &lt;element name="accepted" type="dateTime" /&gt;
-        &lt;element name="source" type="token" /&gt;
       &lt;/sequence&gt;
     &lt;/choice&gt;
   &lt;/complexType&gt;
@@ -1174,7 +1128,7 @@ Formal Syntax</h3>
   &lt;complexType name="checkNameType"&gt;
     &lt;simpleContent&gt;
       &lt;extension base="eppcom:labelType"&gt;
-        &lt;attribute name="exists" type="boolean" use="required" /&gt;
+        &lt;attribute name="claim" type="boolean" use="required" /&gt;
       &lt;/extension&gt;
     &lt;/simpleContent&gt;
   &lt;/complexType&gt;
@@ -1187,16 +1141,9 @@ Formal Syntax</h3>
 
 &lt;/schema&gt;
 </pre></div>
-<a name="anchor28"></a><br /><hr />
+<a name="anchor27"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
 <a name="rfc.section.6"></a><h3>6.&nbsp;
-IANA Considerations</h3>
-
-<p>This memo includes no request to IANA.
-</p>
-<a name="anchor29"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.7"></a><h3>7.&nbsp;
 Security Considerations</h3>
 
 <p>
@@ -1210,40 +1157,39 @@ Security Considerations</h3>
 				as well.
 			
 </p>
-<a name="anchor30"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.8"></a><h3>8.&nbsp;
-Revision Changes</h3>
-
-<p>
-				Changes from -01 to -02
-			
-</p>
 <a name="rfc.references"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<a name="rfc.section.9"></a><h3>9.&nbsp;
+<a name="rfc.section.7"></a><h3>7.&nbsp;
 References</h3>
 
 <a name="rfc.references1"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<h3>9.1.&nbsp;Normative References</h3>
+<h3>7.1.&nbsp;Normative References</h3>
 <table width="99%" border="0">
+<tr><td class="author-text" valign="top"><a name="I-D.lozano-tmch-smd">[I-D.lozano-tmch-smd]</a></td>
+<td class="author-text">Lozano, G., &ldquo;<a href="http://tools.ietf.org/html/draft-lozano-tmch-smd-02">Mark and Signed Mark Objects Mapping</a>,&rdquo; draft-lozano-tmch-smd-02 (work in progress), March&nbsp;2013 (<a href="http://www.ietf.org/internet-drafts/draft-lozano-tmch-smd-02.txt">TXT</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
 <td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC5730">[RFC5730]</a></td>
 <td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5730">Extensible Provisioning Protocol (EPP)</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5730, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5730.txt">TXT</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC5731">[RFC5731]</a></td>
 <td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5731">Extensible Provisioning Protocol (EPP) Domain Name Mapping</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5731, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5731.txt">TXT</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="W3C.REC-xmlschema-2-20041028">[W3C.REC-xmlschema-2-20041028]</a></td>
+<td class="author-text">Biron, P. and A. Malhotra, &ldquo;<a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028">XML Schema Part 2: Datatypes Second Edition</a>,&rdquo; World Wide Web Consortium Recommendation&nbsp;REC-xmlschema-2-20041028, October&nbsp;2004 (<a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028">HTML</a>).</td></tr>
 </table>
 
 <a name="rfc.references2"></a><br /><hr />
 <table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<h3>9.2.&nbsp;Informative References</h3>
+<h3>7.2.&nbsp;Informative References</h3>
 <table width="99%" border="0">
-<tr><td class="author-text" valign="top"><a name="RBP-APP-1.0">[RBP-APP-1.0]</a></td>
+<tr><td class="author-text" valign="top"><a name="AR-APP-1.0">[AR-APP-1.0]</a></td>
 <td class="author-text"><a href="mailto:james.mitchell@ausregistry.com">Mitchell, J.</a> and <a href="mailto:chris@ausregistry.com">C. Wright</a>, &ldquo;Domain Name Application Extension Mapping for the
 			Extensible Provisioning
 			Protocol (EPP),&rdquo; December&nbsp;2012.</td></tr>
+<tr><td class="author-text" valign="top"><a name="I-D.lozano-tmch-func-spec">[I-D.lozano-tmch-func-spec]</a></td>
+<td class="author-text">Lozano, G., &ldquo;<a href="http://tools.ietf.org/html/draft-lozano-tmch-func-spec-06">TMCH functional specifications</a>,&rdquo; draft-lozano-tmch-func-spec-06 (work in progress), May&nbsp;2013 (<a href="http://www.ietf.org/internet-drafts/draft-lozano-tmch-func-spec-06.txt">TXT</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="Trademark Clearinghouse">[Trademark Clearinghouse]</a></td>
+<td class="author-text">&ldquo;<a href="http://newgtlds.icann.org/en/about/trademark-clearinghouse">Trademark Clearinghouse Information</a>.&rdquo;</td></tr>
 </table>
 
 <a name="appendixA"></a><br /><hr />
