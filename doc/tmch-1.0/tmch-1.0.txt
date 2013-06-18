@@ -850,7 +850,7 @@ Internet-Draft     EPP Trademark Clearinghouse Mapping     December 2012
 
 5.  Formal Syntax
 
-   <?xml version="1.0"?>
+   <?xml version="1.0" standalone="no"?>
    <schema targetNamespace="urn:ar:params:xml:ns:tmch-1.0"
      xmlns:tmch="urn:ar:params:xml:ns:tmch-1.0"
      xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
@@ -866,8 +866,7 @@ Internet-Draft     EPP Trademark Clearinghouse Mapping     December 2012
 
      <complexType name="createType">
        <choice>
-         <element name="smd" type="tmch:smdType">
-         </element>
+         <element name="smd" type="tmch:smdType" />
          <sequence>
            <element name="noticeID" type="token" />
            <element name="notAfter" type="dateTime" />
@@ -882,13 +881,14 @@ Internet-Draft     EPP Trademark Clearinghouse Mapping     December 2012
        </restriction>
      </simpleType>
 
-     <!-- Custom response extensions for checkbis extension -->
+     <!--
+        Custom response extensions
+     -->
      <element name="chkData" type="tmch:chkDataType" />
      <element name="infData" type="tmch:infDataType" />
 
      <complexType name="chkDataType">
        <sequence>
-         <element name="cd" type="tmch:checkType"
 
 
 
@@ -897,6 +897,7 @@ Mitchell & Wright         Expires June 4, 2013                 [Page 16]
 Internet-Draft     EPP Trademark Clearinghouse Mapping     December 2012
 
 
+         <element name="cd" type="tmch:checkType"
            maxOccurs="unbounded" />
        </sequence>
      </complexType>
@@ -944,7 +945,6 @@ Internet-Draft     EPP Trademark Clearinghouse Mapping     December 2012
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
-
 
 
 

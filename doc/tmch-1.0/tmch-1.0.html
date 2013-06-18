@@ -1075,7 +1075,7 @@ EPP &lt;update&gt; Command</h3>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 Formal Syntax</h3>
 <div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-&lt;?xml version="1.0"?&gt;
+&lt;?xml version="1.0" standalone="no"?&gt;
 &lt;schema targetNamespace="urn:ar:params:xml:ns:tmch-1.0"
   xmlns:tmch="urn:ar:params:xml:ns:tmch-1.0"
   xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
@@ -1091,8 +1091,7 @@ Formal Syntax</h3>
 
   &lt;complexType name="createType"&gt;
     &lt;choice&gt;
-      &lt;element name="smd" type="tmch:smdType"&gt;
-      &lt;/element&gt;
+      &lt;element name="smd" type="tmch:smdType" /&gt;
       &lt;sequence&gt;
         &lt;element name="noticeID" type="token" /&gt;
         &lt;element name="notAfter" type="dateTime" /&gt;
@@ -1107,7 +1106,9 @@ Formal Syntax</h3>
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
 
-  &lt;!-- Custom response extensions for checkbis extension --&gt;
+  &lt;!--
+     Custom response extensions
+  --&gt;
   &lt;element name="chkData" type="tmch:chkDataType" /&gt;
   &lt;element name="infData" type="tmch:infDataType" /&gt;
 

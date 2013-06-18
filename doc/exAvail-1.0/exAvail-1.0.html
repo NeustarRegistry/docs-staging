@@ -578,14 +578,14 @@ EPP &lt;check&gt; Command</h3>
                             details
                         
 </p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+&lt;?xml version="1.0" standalone="no"?&gt;
 &lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 &lt;response&gt;
  &lt;result code="1000"&gt;
    &lt;msg lang="en"&gt;Command completed successfully&lt;/msg&gt;
  &lt;/result&gt;
  &lt;extension&gt;
-  &lt;chkData xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0"&gt;
+  &lt;chkData xmlns="urn:ar:params:xml:ns:exAvail-1.0"&gt;
   &lt;cd&gt;
    &lt;name&gt;domain-avail.tld&lt;/name&gt;
    &lt;state s="available"&gt;
@@ -595,7 +595,7 @@ EPP &lt;check&gt; Command</h3>
   &lt;cd&gt;
    &lt;name&gt;domain-application.tld&lt;/name&gt;
    &lt;state s="application"&gt;
-    &lt;phase&gt;sunrise&lt;/exAvil:phase&gt;
+    &lt;phase&gt;sunrise&lt;/phase&gt;
     &lt;date&gt;2012-10-20T00:00:00Z&lt;/date&gt;
    &lt;/state&gt;
   &lt;/cd&gt;
@@ -619,7 +619,7 @@ EPP &lt;check&gt; Command</h3>
   &lt;/cd&gt;
   &lt;cd&gt;
    &lt;name&gt;domain-inval!d.tld&lt;/name&gt;
-   &lt;state s="inValid"&gt;
+   &lt;state s="invalid"&gt;
     &lt;reason&gt;Invalid domain name&lt;/reason&gt;
    &lt;/state&gt;
   &lt;/cd&gt;
@@ -757,7 +757,7 @@ Formal Syntax</h3>
                     instances.
                 
 </p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml version="1.0" standalone="no"?&gt;
 &lt;schema targetNamespace="urn:ar:params:xml:ns:exAvail-1.0"
         xmlns:exAvail="urn:ar:params:xml:ns:exAvail-1.0"
         xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
