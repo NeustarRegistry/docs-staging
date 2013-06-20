@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>au.com.ausregistry</groupId>
+  <artifactId>ari-rtk-addon</artifactId>
+  <version>1.0.0</version>
+  <versioning>
+    <versions>
+      <version>1.0.0</version>
+    </versions>
+    <lastUpdated>20130620100506</lastUpdated>
+  </versioning>
+</metadata>
