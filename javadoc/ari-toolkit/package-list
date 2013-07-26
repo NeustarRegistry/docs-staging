@@ -10,6 +10,7 @@ com.ausregistry.jtoolkit2.se.rgp
 com.ausregistry.jtoolkit2.se.secdns
 com.ausregistry.jtoolkit2.se.sync
 com.ausregistry.jtoolkit2.se.tmch
+com.ausregistry.jtoolkit2.se.tmch.exception
 com.ausregistry.jtoolkit2.se.variant
 com.ausregistry.jtoolkit2.session
 com.ausregistry.jtoolkit2.tmdb
