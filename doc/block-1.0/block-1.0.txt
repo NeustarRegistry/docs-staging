@@ -1,0 +1,784 @@
+
+
+
+Internet Engineering Task Force                                C. Wright
+Internet-Draft                                                   Q. Pham
+Intended status: Informational                               AusRegistry
+Expires: September 27, 2015                               March 26, 2015
+
+
+  Domain Block Mapping for the Extensible Provisioning Protocol (EPP)
+                  draft-ar-block-domain-epp-mapping-01
+
+Abstract
+
+   This document describes an Extensible Provisioning Protocol (EPP)
+   extension mapping for the provisioning and management of blocks.
+
+Status of this Memo
+
+   This document is an Internet-Draft and is NOT offered in accordance
+   with Section 10 of RFC 2026, and the author does not provide the IETF
+   with any rights other than to publish as an Internet-Draft.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on September 27, 2015.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 1]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+Table of Contents
+
+   1.  Introduction . . . . . . . . . . . . . . . . . . . . . . . . .  3
+     1.1.  Conventions Used in This Document  . . . . . . . . . . . .  3
+   2.  Object Attributes  . . . . . . . . . . . . . . . . . . . . . .  3
+     2.1.  id . . . . . . . . . . . . . . . . . . . . . . . . . . . .  3
+   3.  EPP Command Mapping  . . . . . . . . . . . . . . . . . . . . .  4
+     3.1.  EPP Query Commands . . . . . . . . . . . . . . . . . . . .  4
+       3.1.1.  EPP <check> Command  . . . . . . . . . . . . . . . . .  4
+       3.1.2.  EPP <info> Command . . . . . . . . . . . . . . . . . .  4
+       3.1.3.  EPP <transfer> Command . . . . . . . . . . . . . . . .  6
+     3.2.  EPP Transform Commands . . . . . . . . . . . . . . . . . .  6
+       3.2.1.  EPP <create> Command . . . . . . . . . . . . . . . . .  7
+       3.2.2.  EPP <delete> Command . . . . . . . . . . . . . . . . .  8
+       3.2.3.  EPP <renew> Command  . . . . . . . . . . . . . . . . .  9
+       3.2.4.  EPP <transfer> Command . . . . . . . . . . . . . . . . 11
+       3.2.5.  EPP <update> Command . . . . . . . . . . . . . . . . . 11
+   4.  Formal Syntax  . . . . . . . . . . . . . . . . . . . . . . . . 11
+   5.  Security Considerations  . . . . . . . . . . . . . . . . . . . 13
+   6.  Normative References . . . . . . . . . . . . . . . . . . . . . 14
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 2]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+1.  Introduction
+
+   Registry operators MAY offer clients the ability to request blocking
+   of the registration of a domain name on behalf of a registrant whose
+   intention is to not activate the domain name in DNS as a alternative
+   to a defensive domain name registration.  Although a block and
+   defensive registration may be similar in some ways as they prevent
+   the registration of a specific domain name, the concept of a block
+   differs greatly as a block does not have an option to be activated in
+   DNS, e.g. name servers cannot be assigned.  Given this, a block MAY
+   be priced lower than a domain name registration as there is no
+   obligation from the registry operator to provide a resolution service
+   for the domain name.
+
+   This extension provides a mechanism for clients to provision and
+   manage blocks which includes the registration, renewal, deletion and
+   info of a block.  A registry operator SHOULD define the price of
+   blocks and SHOULD provide an out of band mechanism to allocate a
+   block resulting in a domain name registration if required.
+
+1.1.  Conventions Used in This Document
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [RFC2119].
+
+   "block-1.0" is used as an abbreviation for
+   "urn:ar:params:xml:ns:block-1.0".  The XML namespace prefix "block"
+   is used, but implementations MUST NOT depend on it and instead employ
+   a proper namespace-aware XML parser and serializer to interpret and
+   output the XML documents.
+
+
+2.  Object Attributes
+
+   A block for domain name results in a object that is similar to a
+   domain name as described in EPP Domain Name Mapping [RFC5731]..
+   Those new elements, belonging exclusively to a block are described
+   here.
+
+2.1.  id
+
+   Servers may allow multiple blocks for the same domain names and in
+   order for the server and client to uniquely identify and manage
+   (renew, delete and info) a block, a client MUST provide a unique
+   identifier (id) for block on registration.  Clients MUST ensure that
+   commands to query or transform a block includes the block identifier
+   associated with the original <create> command.
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 3]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Block identifiers SHOULD NOT be composed of characters that cannot be
+   represented in US-ASCII.  Servers SHOULD treat identifiers in case
+   insensitive manner and disallow an identifier that only differs in
+   casing compared to an existing identifier.
+
+
+3.  EPP Command Mapping
+
+   A detailed description of the EPP syntax and semantics can be found
+   in the EPP core protocol specification [RFC5730].  The command
+   mappings described here are specifically for use in provisioning
+   blocks.
+
+3.1.  EPP Query Commands
+
+   EPP provides three commands to retrieve object information: <check>
+   to determine if an object is known to the server, <info> to retrieve
+   detailed information associated with an object, and <transfer> to
+   retrieve object transfer status information.
+
+3.1.1.  EPP <check> Command
+
+   This extension does not define any extension to the EPP <check>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.1.2.  EPP <info> Command
+
+   This extension defines additional elements to extend the EPP <info>
+   command and response to be used in conjunction with the EPP Domain
+   Name Mapping [RFC5731].
+
+   To enable clients to view a block the <domain:info> is extended with
+   a <block:info> element.  If the querying client is not the sponsoring
+   client the server SHOULD not provide the details of the block.  The
+   <block:info> element contains the following child element:
+
+   o  A <id> that represents the block identifier assigned to the block
+      by the creating client.
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 4]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <info> request
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <info>
+         <info xmlns="urn:ietf:params:xml:ns:domain-1.0">
+           <name>block.tld</name>
+       </info>
+       <extension>
+         <info xmlns="urn:ar:params:xml:ns:block-1.0">
+           <id>BLK-1</id>
+         </info>
+       </extension>
+       <clTRID>ABC-12345</clTRID>
+     </command>
+   </epp>
+
+   When a <domain:info> command containing the <block:info> element has
+   been processed successfully, the server MUST respond with the
+   <domain:infData> element described in the EPP Domain Name Mapping
+   [RFC5731]. and also include a <block:infData> element that contains
+   one <block:id> element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 5]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <info> response:
+
+   <?xml version="1.0" encoding="UTF-8" ?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+      <response>
+         <result code="1000">
+            <msg>Command completed successfully</msg>
+         </result>
+         <resData>
+            <infData xmlns="urn:ietf:params:xml:ns:domain-1.0">
+               <name>block.tld</name>
+               <roid>B0000003-AR</roid>
+               <registrant>R123</registrant>
+               <clID>Registrar</clID>
+               <crDate>2015-02-09T15:44:58.0Z</crDate>
+               <exDate>2016-02-09T15:44:58.0Z</exDate>
+            </infData>
+         </resData>
+         <extension>
+            <infData xmlns="urn:ar:params:xml:ns:block-1.0">
+               <id>BLK-1</id>
+            </infData>
+         </extension>
+         <trID>
+            <clTRID>ABC-12345</clTRID>
+            <svTRID>54322-XYZ</svTRID>
+         </trID>
+      </response>
+   </epp>
+
+   An EPP error response MUST be returned if a <domain:info> command
+   containing the <block:info> element cannot be processed for any
+   reason.
+
+3.1.3.  EPP <transfer> Command
+
+   This extension does not define any extension to the EPP <transfer>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.  EPP Transform Commands
+
+   EPP provides five commands to transform objects: <create> to create
+   an instance of an object, <delete> to delete an instance of an
+   object, <renew> to extend the validity period of an object,
+   <transfer> to manage object sponsorship changes, and <update> to
+   change information associated with an object.
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 6]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+3.2.1.  EPP <create> Command
+
+   This extension defines additional elements to extend the EPP <create>
+   command to be used in conjunction with the EPP Domain Name Mapping
+   [RFC5731].
+
+   To facilitate the registration of a block the <domain:create> command
+   is extended with a <block:create> element, which signals a clients
+   request to register a block.  Because a block shares similarities
+   with a domain name, the server SHOULD require the client to provide
+   the identifier of a contact object to assign as the registrant of the
+   block and the domain name that the client wishes to block from
+   registration.  The <block:create> element contains the following
+   child elements:
+
+   o  A <id> element that contains a unique client assigned identifier
+      for the block.
+
+   Example <create> request:
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <create>
+         <create xmlns="urn:ietf:params:xml:ns:domain-1.0">
+           <name>block.tld</name>
+           <registrant>jd1234</registrant>
+           <period unit="y">2<period>
+         </create>
+       </create>
+       <extension>
+         <create xmlns="urn:ar:params:xml:ns:block-1.0">
+           <id>BLK-1</id>
+         </create>
+       </extension>
+       <clTRID>ABC-12345</clTRID>
+     </command>
+   </epp>
+
+   When a <domain:create> command containing the <block:create> element
+   has been processed successfully, the server MUST respond with the
+   <domain:creData> element described in the EPP Domain Name Mapping
+   [RFC5731]. and a <block:creData> element that contains one <block:id>
+   element.
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 7]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <create> response:
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+      <response>
+         <result code="1000">
+            <msg>Command completed successfully</msg>
+         </result>
+         <resData>
+            <creData xmlns="urn:ietf:params:xml:ns:domain-1.0">
+               <name>block.tld</name>
+               <crDate>2015-01-01T22:00:00.0Z</crDate>
+               <exDate>2017-01-01T22:00:00.0Z</exDate>
+            <creData>
+         </resData>
+         <extension>
+            <creData xmlns="urn:ar:params:xml:ns:block-1.0">
+               <id>BLK-1</id>
+            </creData>
+         </extension>
+         <trID>
+            <clTRID>ABC-12345</clTRID>
+            <svTRID>54322-XYZ</svTRID>
+         </trID>
+      </response>
+   </epp>
+
+   An EPP error response MUST be returned if a <domain:create> command
+   containing the <block:create> element cannot be processed for any
+   reason.
+
+3.2.2.  EPP <delete> Command
+
+   This extension defines additional elements to extend the EPP <delete>
+   command and response to be used in conjunction with the EPP Domain
+   Name Mapping [RFC5731].
+
+   To facilitate the deletion of a block the <domain:delete> command is
+   extended with a <block:delete> element, which signals a clients
+   request to delete a sponsored block.  The server SHOULD require the
+   client to provide the domain name and its block id.  The <block:
+   delete> element contains the following child elements:
+
+   o  A <id> element that contains the client assigned identifier for
+      the block for the corresponding domain name.
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 8]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <delete> request:
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <delete>
+           <delete xmlns="urn:ietf:params:xml:ns:domain-1.0">
+               <delete>block.tld</name>
+           </delete>
+       </delete>
+       <extension>
+         <delete xmlns="urn:ar:params:xml:ns:block-1.0">
+           <id>BLK-1</id>
+         </delete>
+       </extension>
+       <clTRID>ABC-12345</clTRID>
+     </command>
+   </epp>
+
+   When a <domain:delete> command containing the <block:delete> element
+   has been processed successfully, the server MUST respond with an EPP
+   response with no <resData> element.  An EPP error response MUST be
+   returned if a <delete> command cannot be processed for any reason.
+
+3.2.3.  EPP <renew> Command
+
+   This extension defines additional elements to extend the EPP <renew>
+   command and response to be used in conjunction with the EPP Domain
+   Name Mapping [RFC5731].
+
+   To facilitate the renewal of a block the <domain:renew> command is
+   extended with a <block:renew> element, which signals a clients
+   request to renew a sponsored block.  The server SHOULD require the
+   client to provide the domain name and its block id.  The <block:
+   renew> element contains the following child elements:
+
+   o  A <id> element that contains a the client assigned identifier for
+      the block for the corresponding domain name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015               [Page 9]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <renew> request:
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+     <command>
+       <renew>
+           <renew xmlns="urn:ietf:params:xml:ns:domain-1.0">
+               <name>block.tld</name>
+               <curExpDate>2015-01-01</curExpDate>
+               <period unit="y">5</period>
+           </renew>
+       </renew>
+       <extension>
+         <renew xmlns="urn:ar:params:xml:ns:block-1.0">
+           <id>BLK-1</id>
+         </renew>
+       </extension>
+       <clTRID>ABC-12345</clTRID>
+     </command>
+   </epp>
+
+   When a <domain:renew> command containing the <block:renew> element
+   has been processed successfully, the server MUST respond with the
+   <domain:renData> element described in the EPP Domain Name Mapping
+   [RFC5731]. and a <block:renData> element that contains one <block:id>
+   element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015              [Page 10]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+   Example <renew> response:
+
+   <?xml version="1.0" standalone="no"?>
+   <epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+      <response>
+         <result code="1000">
+            <msg>Command completed successfully</msg>
+         </result>
+         <resData>
+            <renData xmlns="urn:ietf:params:xml:ns:domain-1.0">
+               <name>block.tld</name>
+               <exDate>2020-01-01T22:00:00.0Z</exDate>
+            <renData>
+         </resData>
+         <extension>
+            <renData xmlns="urn:ar:params:xml:ns:block-1.0">
+               <id>BLK-1</id>
+            </renData>
+         </extension>
+         <trID>
+            <clTRID>ABC-12345</clTRID>
+            <svTRID>54322-XYZ</svTRID>
+         </trID>
+      </response>
+   </epp>
+
+   An EPP error response MUST be returned if a <domain:renew> command
+   containing the <block:renew> element cannot be processed for any
+   reason.
+
+3.2.4.  EPP <transfer> Command
+
+   This extension does not define any extension to the EPP <transfer>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+3.2.5.  EPP <update> Command
+
+   This extension does not define any extension to the EPP <update>
+   command or response described in the EPP Domain Name Mapping
+   [RFC5731].
+
+
+4.  Formal Syntax
+
+   <?xml version="1.0" encoding="UTF-8"?>
+   <schema targetNamespace="urn:ar:params:xml:ns:block-1.0"
+         xmlns:block="urn:ar:params:xml:ns:block-1.0"
+
+
+
+Wright & Pham          Expires September 27, 2015              [Page 11]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+         xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+         xmlns="http://www.w3.org/2001/XMLSchema"
+         elementFormDefault="qualified">
+
+       <!--
+           Import common element types.
+       -->
+       <import namespace="urn:ietf:params:xml:ns:eppcom-1.0" />
+       <import namespace="urn:ietf:params:xml:ns:domain-1.0" />
+
+       <element name="create" type="block:createType"/>
+       <element name="info" type="block:infoType"/>
+       <element name="renew" type="block:renewType"/>
+       <element name="delete" type="block:deleteType"/>
+
+       <!--
+           Type definitions.
+       -->
+       <complexType name="createType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <complexType name="infoType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <complexType name="deleteType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <!--
+       Child elements of the <renew> command.
+       -->
+       <complexType name="renewType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <!--
+        Child response elements.
+        -->
+
+
+
+Wright & Pham          Expires September 27, 2015              [Page 12]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+       <element name="creData" type="block:creDataType"/>
+       <element name="infData" type="block:infDataType"/>
+       <element name="renData" type="block:renDataType"/>
+
+       <!--
+        <create> response elements.
+        -->
+       <complexType name="creDataType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <!--
+        <info> response elements.
+        -->
+       <complexType name="infDataType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <!--
+           <renew> response elements.
+       -->
+       <complexType name="renDataType">
+           <sequence>
+               <element name="id" type="eppcom:clIDType"/>
+           </sequence>
+       </complexType>
+
+       <!--
+           End of schema.
+       -->
+   </schema>
+
+
+5.  Security Considerations
+
+   The mapping extensions described in this document do not provide any
+   security services beyond those described by EPP [RFC5730], the EPP
+   Domain Name Mapping [RFC5731], and protocol layers used by EPP.  The
+   security considerations described in these other specifications apply
+   to this specification as well.
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015              [Page 13]
+
+Internet-Draft          EPP Domain Block Mapping              March 2015
+
+
+6.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+   [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
+              STD 69, RFC 5730, August 2009.
+
+   [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
+              Domain Name Mapping", STD 69, RFC 5731, August 2009.
+
+
+Authors' Addresses
+
+   Chris Wright
+   AusRegistry
+   8/10 Queens Road
+   Melbourne, Victoria  3004
+   AU
+
+   Email: chris@ausregistry.com
+   URI:   www.ausregistry.com
+
+
+   Quoc Pham
+   AusRegistry
+   8/10 Queens Road
+   Melbourne, Victoria  3004
+   AU
+
+   Email: quoc.pham@ausregistry.com
+   URI:   www.ausregistry.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wright & Pham          Expires September 27, 2015              [Page 14]
+

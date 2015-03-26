@@ -1,0 +1,864 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head><title>Domain Block Mapping for the
+			Extensible Provisioning Protocol (EPP)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="Domain Block Mapping for the
+			Extensible Provisioning Protocol (EPP)">
+<meta name="keywords" content="EPP">
+<meta name="generator" content="xml2rfc v1.36 (http://xml.resource.org/)">
+<style type='text/css'><!--
+        body {
+                font-family: verdana, charcoal, helvetica, arial, sans-serif;
+                font-size: small; color: #000; background-color: #FFF;
+                margin: 2em;
+        }
+        h1, h2, h3, h4, h5, h6 {
+                font-family: helvetica, monaco, "MS Sans Serif", arial, sans-serif;
+                font-weight: bold; font-style: normal;
+        }
+        h1 { color: #900; background-color: transparent; text-align: right; }
+        h3 { color: #333; background-color: transparent; }
+
+        td.RFCbug {
+                font-size: x-small; text-decoration: none;
+                width: 30px; height: 30px; padding-top: 2px;
+                text-align: justify; vertical-align: middle;
+                background-color: #000;
+        }
+        td.RFCbug span.RFC {
+                font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+                font-weight: bold; color: #666;
+        }
+        td.RFCbug span.hotText {
+                font-family: charcoal, monaco, geneva, "MS Sans Serif", helvetica, verdana, sans-serif;
+                font-weight: normal; text-align: center; color: #FFF;
+        }
+
+        table.TOCbug { width: 30px; height: 15px; }
+        td.TOCbug {
+                text-align: center; width: 30px; height: 15px;
+                color: #FFF; background-color: #900;
+        }
+        td.TOCbug a {
+                font-family: monaco, charcoal, geneva, "MS Sans Serif", helvetica, sans-serif;
+                font-weight: bold; font-size: x-small; text-decoration: none;
+                color: #FFF; background-color: transparent;
+        }
+
+        td.header {
+                font-family: arial, helvetica, sans-serif; font-size: x-small;
+                vertical-align: top; width: 33%;
+                color: #FFF; background-color: #666;
+        }
+        td.author { font-weight: bold; font-size: x-small; margin-left: 4em; }
+        td.author-text { font-size: x-small; }
+
+        /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+        a.info {
+                /* This is the key. */
+                position: relative;
+                z-index: 24;
+                text-decoration: none;
+        }
+        a.info:hover {
+                z-index: 25;
+                color: #FFF; background-color: #900;
+        }
+        a.info span { display: none; }
+        a.info:hover span.info {
+                /* The span will display just on :hover state. */
+                display: block;
+                position: absolute;
+                font-size: smaller;
+                top: 2em; left: -5em; width: 15em;
+                padding: 2px; border: 1px solid #333;
+                color: #900; background-color: #EEE;
+                text-align: left;
+        }
+
+        a { font-weight: bold; }
+        a:link    { color: #900; background-color: transparent; }
+        a:visited { color: #633; background-color: transparent; }
+        a:active  { color: #633; background-color: transparent; }
+
+        p { margin-left: 2em; margin-right: 2em; }
+        p.copyright { font-size: x-small; }
+        p.toc { font-size: small; font-weight: bold; margin-left: 3em; }
+        table.toc { margin: 0 0 0 3em; padding: 0; border: 0; vertical-align: text-top; }
+        td.toc { font-size: small; font-weight: bold; vertical-align: text-top; }
+
+        ol.text { margin-left: 2em; margin-right: 2em; }
+        ul.text { margin-left: 2em; margin-right: 2em; }
+        li      { margin-left: 3em; }
+
+        /* RFC-2629 <spanx>s and <artwork>s. */
+        em     { font-style: italic; }
+        strong { font-weight: bold; }
+        dfn    { font-weight: bold; font-style: normal; }
+        cite   { font-weight: normal; font-style: normal; }
+        tt     { color: #036; }
+        tt, pre, pre dfn, pre em, pre cite, pre span {
+                font-family: "Courier New", Courier, monospace; font-size: small;
+        }
+        pre {
+                text-align: left; padding: 4px;
+                color: #000; background-color: #CCC;
+        }
+        pre dfn  { color: #900; }
+        pre em   { color: #66F; background-color: #FFC; font-weight: normal; }
+        pre .key { color: #33C; font-weight: bold; }
+        pre .id  { color: #900; }
+        pre .str { color: #000; background-color: #CFF; }
+        pre .val { color: #066; }
+        pre .rep { color: #909; }
+        pre .oth { color: #000; background-color: #FCF; }
+        pre .err { background-color: #FCC; }
+
+        /* RFC-2629 <texttable>s. */
+        table.all, table.full, table.headers, table.none {
+                font-size: small; text-align: center; border-width: 2px;
+                vertical-align: top; border-collapse: collapse;
+        }
+        table.all, table.full { border-style: solid; border-color: black; }
+        table.headers, table.none { border-style: none; }
+        th {
+                font-weight: bold; border-color: black;
+                border-width: 2px 2px 3px 2px;
+        }
+        table.all th, table.full th { border-style: solid; }
+        table.headers th { border-style: none none solid none; }
+        table.none th { border-style: none; }
+        table.all td {
+                border-style: solid; border-color: #333;
+                border-width: 1px 2px;
+        }
+        table.full td, table.headers td, table.none td { border-style: none; }
+
+        hr { height: 1px; }
+        hr.insert {
+                width: 80%; border-style: none; border-width: 0;
+                color: #CCC; background-color: #CCC;
+        }
+--></style>
+</head>
+<body>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
+<tr><td class="header">Internet Engineering Task Force</td><td class="header">C. Wright</td></tr>
+<tr><td class="header">Internet-Draft</td><td class="header">Q. Pham</td></tr>
+<tr><td class="header">Intended status: Informational</td><td class="header">AusRegistry</td></tr>
+<tr><td class="header">Expires: September 27, 2015</td><td class="header">March 26, 2015</td></tr>
+</table></td></tr></table>
+<h1><br />Domain Block Mapping for the
+			Extensible Provisioning Protocol (EPP)<br />draft-ar-block-domain-epp-mapping-01</h1>
+
+<h3>Abstract</h3>
+
+<p>
+                This document describes an Extensible Provisioning Protocol (EPP)
+                extension mapping for the provisioning and management of blocks.
+			
+</p>
+<h3>Status of this Memo</h3>
+<p>
+This document is an Internet-Draft and is
+NOT offered in accordance with Section&nbsp;10 of RFC&nbsp;2026,
+and the author does not provide the IETF with any rights other
+than to publish as an Internet-Draft.</p>
+<p>
+Internet-Drafts are working documents of the Internet Engineering
+Task Force (IETF).  Note that other groups may also distribute
+working documents as Internet-Drafts.  The list of current
+Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
+<p>
+Internet-Drafts are draft documents valid for a maximum of six months
+and may be updated, replaced, or obsoleted by other documents at any time.
+It is inappropriate to use Internet-Drafts as reference material or to cite
+them other than as &ldquo;work in progress.&rdquo;</p>
+<p>
+This Internet-Draft will expire on September 27, 2015.</p>
+<a name="toc"></a><br /><hr />
+<h3>Table of Contents</h3>
+<p class="toc">
+<a href="#anchor1">1.</a>&nbsp;
+Introduction<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor2">1.1.</a>&nbsp;
+Conventions Used in This Document<br />
+<a href="#anchor3">2.</a>&nbsp;
+Object Attributes<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor4">2.1.</a>&nbsp;
+id<br />
+<a href="#anchor5">3.</a>&nbsp;
+EPP Command Mapping<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor6">3.1.</a>&nbsp;
+EPP Query Commands<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor7">3.1.1.</a>&nbsp;
+EPP &lt;check&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor8">3.1.2.</a>&nbsp;
+EPP &lt;info&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor9">3.1.3.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor10">3.2.</a>&nbsp;
+EPP Transform Commands<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor11">3.2.1.</a>&nbsp;
+EPP &lt;create&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor12">3.2.2.</a>&nbsp;
+EPP &lt;delete&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor13">3.2.3.</a>&nbsp;
+EPP &lt;renew&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor14">3.2.4.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor15">3.2.5.</a>&nbsp;
+EPP &lt;update&gt; Command<br />
+<a href="#anchor16">4.</a>&nbsp;
+Formal Syntax<br />
+<a href="#anchor17">5.</a>&nbsp;
+Security Considerations<br />
+<a href="#rfc.references1">6.</a>&nbsp;
+Normative References<br />
+<a href="#rfc.authors">&#167;</a>&nbsp;
+Authors' Addresses<br />
+</p>
+<br clear="all" />
+
+<a name="anchor1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.1"></a><h3>1.&nbsp;
+Introduction</h3>
+
+<p>
+				Registry operators MAY offer clients the ability to request blocking of the 
+				registration of a domain name on behalf of a registrant whose intention
+				is to not activate the domain name in DNS as a alternative to a defensive
+				domain name registration. Although a block and defensive registration may be
+				similar in some ways as they prevent the registration of a specific domain name,
+				the concept of a block differs greatly as a block does not have an option to be
+				activated in DNS, e.g. name servers cannot be assigned. Given this, a
+				block MAY be priced lower than a domain name registration as there is no obligation
+				from the registry operator to provide a resolution service for the domain name.
+			
+</p>
+<p>
+				This extension provides a mechanism for clients to provision and manage blocks 
+				which includes the registration, renewal, deletion and info of a block. A registry
+				operator SHOULD define the price of blocks and SHOULD provide an out of band mechanism
+				to allocate a block resulting in a domain name registration if required.
+			
+</p>
+<a name="anchor2"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.1.1"></a><h3>1.1.&nbsp;
+Conventions Used in This Document</h3>
+
+<p>
+					The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+					"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in
+					this document are to be interpreted as described in
+					<a class='info' href='#RFC2119'>RFC 2119<span> (</span><span class='info'>Bradner, S., &ldquo;Key words for use in RFCs to Indicate Requirement Levels,&rdquo; March&nbsp;1997.</span><span>)</span></a> [RFC2119].
+				
+</p>
+<p>
+					"block-1.0" is used as an abbreviation for
+					"urn:ar:params:xml:ns:block-1.0". The XML namespace prefix
+					"block" is used, but implementations MUST NOT depend on it and
+					instead employ a proper namespace-aware XML parser and serializer
+					to interpret and output the XML documents.
+				
+</p>
+<a name="anchor3"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2"></a><h3>2.&nbsp;
+Object Attributes</h3>
+
+<p>
+				A block for domain name results in a object that is similar to a domain 
+				name as described in <a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731]..
+				Those new elements, belonging exclusively to a block are described here.
+			
+</p>
+<a name="anchor4"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.2.1"></a><h3>2.1.&nbsp;
+id</h3>
+
+<p>
+					Servers may allow multiple blocks for the same domain names and in order for the server
+					and client to uniquely identify and manage (renew, delete and info) a block, 
+					a client MUST provide a unique identifier (id) for block on registration.
+					Clients MUST ensure that commands to query or transform a block includes
+					the block identifier associated with the original &lt;create&gt; command.			
+				
+</p>
+<p>
+					Block identifiers SHOULD NOT be composed of characters that
+					cannot be represented in US-ASCII. Servers SHOULD treat identifiers in case
+					insensitive manner and disallow an identifier that only differs in casing compared
+					to an existing identifier.
+				
+</p>
+<a name="anchor5"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3"></a><h3>3.&nbsp;
+EPP Command Mapping</h3>
+
+<p>
+				A detailed description of the EPP syntax and semantics can be found
+				in the
+				<a class='info' href='#RFC5730'>EPP core protocol specification<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5730].
+				The command mappings described here are specifically for use in
+				provisioning blocks.
+			
+</p>
+<a name="anchor6"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1"></a><h3>3.1.&nbsp;
+EPP Query Commands</h3>
+
+<p>
+					EPP provides three commands to retrieve object information:
+					&lt;check&gt; to determine if an object is known to the server,
+					&lt;info&gt; to retrieve detailed information associated with an
+					object, and &lt;transfer&gt; to retrieve object transfer status
+					information.
+				
+</p>
+<a name="anchor7"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.1"></a><h3>3.1.1.&nbsp;
+EPP &lt;check&gt; Command</h3>
+
+<p>
+						This extension does not define any extension to the EPP
+						&lt;check&gt; command or response described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<a name="anchor8"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.2"></a><h3>3.1.2.&nbsp;
+EPP &lt;info&gt; Command</h3>
+
+<p>
+						This extension defines additional elements to extend the EPP
+						&lt;info&gt; command and response to be used in conjunction with
+						the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<p>
+						To enable clients to view a block the &lt;domain:info&gt; is extended with
+						a &lt;block:info&gt; element. If the querying client is not the sponsoring client
+						the server SHOULD not provide the details of the block. The &lt;block:info&gt; 
+						element contains the following child element:
+                        </p>
+<ul class="text">
+<li>
+                                A &lt;id&gt; that represents the block identifier assigned 
+								to the block by the creating client. 
+                            
+</li>
+</ul><p>			
+					
+</p>
+<p style='text-align: left'>Example &lt;info&gt; request
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;info&gt;
+      &lt;info xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+        &lt;name&gt;block.tld&lt;/name&gt;
+    &lt;/info&gt;
+    &lt;extension&gt;
+      &lt;info xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+        &lt;id&gt;BLK-1&lt;/id&gt;
+      &lt;/info&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						When a &lt;domain:info&gt; command containing the &lt;block:info&gt;
+						element has been processed successfully, the server MUST
+						respond with the &lt;domain:infData&gt; element described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+						and also include a &lt;block:infData&gt; element that contains one 
+						&lt;block:id&gt; element.
+					
+</p>
+<p style='text-align: left'>Example &lt;info&gt; response:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+   &lt;response&gt;
+      &lt;result code="1000"&gt;
+         &lt;msg&gt;Command completed successfully&lt;/msg&gt;
+      &lt;/result&gt;
+      &lt;resData&gt;
+         &lt;infData xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;name&gt;block.tld&lt;/name&gt;
+            &lt;roid&gt;B0000003-AR&lt;/roid&gt;
+            &lt;registrant&gt;R123&lt;/registrant&gt;
+            &lt;clID&gt;Registrar&lt;/clID&gt;
+            &lt;crDate&gt;2015-02-09T15:44:58.0Z&lt;/crDate&gt;
+            &lt;exDate&gt;2016-02-09T15:44:58.0Z&lt;/exDate&gt;
+         &lt;/infData&gt;
+      &lt;/resData&gt;
+      &lt;extension&gt;
+         &lt;infData xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+            &lt;id&gt;BLK-1&lt;/id&gt;
+         &lt;/infData&gt;
+      &lt;/extension&gt;
+      &lt;trID&gt;
+         &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+         &lt;svTRID&gt;54322-XYZ&lt;/svTRID&gt;
+      &lt;/trID&gt;
+   &lt;/response&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						An EPP error response MUST be returned if a &lt;domain:info&gt; command containing the &lt;block:info&gt;
+						element cannot be processed for any reason.
+					
+</p>
+<a name="anchor9"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.1.3"></a><h3>3.1.3.&nbsp;
+EPP &lt;transfer&gt; Command</h3>
+
+<p>
+						This extension does not define any extension to the EPP
+						&lt;transfer&gt; command or response described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<a name="anchor10"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2"></a><h3>3.2.&nbsp;
+EPP Transform Commands</h3>
+
+<p>
+					EPP provides five commands to transform objects: &lt;create&gt;
+					to create an instance of an object, &lt;delete&gt; to delete an
+					instance of an object, &lt;renew&gt; to extend the validity period
+					of an object, &lt;transfer&gt; to manage object sponsorship
+					changes, and &lt;update&gt; to change information associated with
+					an object.
+				
+</p>
+<a name="anchor11"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.1"></a><h3>3.2.1.&nbsp;
+EPP &lt;create&gt; Command</h3>
+
+<p>
+						This extension defines additional elements to extend the EPP
+						&lt;create&gt; command to be used in conjunction with
+						the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<p>
+						To facilitate the registration of a block the &lt;domain:create&gt; 
+						command is extended with a &lt;block:create&gt; element, which signals a
+						clients request to register a block. Because a block shares similarities
+						with a domain name, the server SHOULD require the client to provide the
+						identifier of a contact object to assign as the registrant of the block 
+						and the domain name that the client wishes to block from registration.						
+						The &lt;block:create&gt; element contains the following 
+						child elements:
+						</p>
+<ul class="text">
+<li>
+								A &lt;id&gt; element that contains a unique client assigned identifier
+								for the block.
+							
+</li>
+</ul><p>
+					
+</p>
+<p style='text-align: left'>Example &lt;create&gt; request:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;create&gt;
+      &lt;create xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+        &lt;name&gt;block.tld&lt;/name&gt;
+        &lt;registrant&gt;jd1234&lt;/registrant&gt;
+        &lt;period unit="y"&gt;2&lt;period&gt;
+      &lt;/create&gt;
+    &lt;/create&gt;
+    &lt;extension&gt;
+      &lt;create xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+        &lt;id&gt;BLK-1&lt;/id&gt;
+      &lt;/create&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						When a &lt;domain:create&gt; command containing the &lt;block:create&gt;
+						element has been processed successfully, the server MUST
+						respond with the &lt;domain:creData&gt; element described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+						and a &lt;block:creData&gt; element that contains one 
+						&lt;block:id&gt; element.
+					
+</p>
+<p style='text-align: left'>Example &lt;create&gt; response:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+   &lt;response&gt;
+      &lt;result code="1000"&gt;
+         &lt;msg&gt;Command completed successfully&lt;/msg&gt;
+      &lt;/result&gt;
+      &lt;resData&gt;
+         &lt;creData xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;name&gt;block.tld&lt;/name&gt;
+            &lt;crDate&gt;2015-01-01T22:00:00.0Z&lt;/crDate&gt;
+            &lt;exDate&gt;2017-01-01T22:00:00.0Z&lt;/exDate&gt;
+         &lt;creData&gt;
+      &lt;/resData&gt;
+      &lt;extension&gt;
+         &lt;creData xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+            &lt;id&gt;BLK-1&lt;/id&gt;
+         &lt;/creData&gt;
+      &lt;/extension&gt;
+      &lt;trID&gt;
+         &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+         &lt;svTRID&gt;54322-XYZ&lt;/svTRID&gt;
+      &lt;/trID&gt;
+   &lt;/response&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						An EPP error response MUST be returned if a &lt;domain:create&gt; command containing the &lt;block:create&gt;
+						element cannot be processed for any reason.
+					
+</p>
+<a name="anchor12"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.2"></a><h3>3.2.2.&nbsp;
+EPP &lt;delete&gt; Command</h3>
+
+<p>
+ 						This extension defines additional elements to extend the EPP
+						&lt;delete&gt; command and response to be used in conjunction with
+						the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<p>
+						To facilitate the deletion of a block the &lt;domain:delete&gt; 
+						command is extended with a &lt;block:delete&gt; element, which signals a
+						clients request to delete a sponsored block. The server SHOULD require the 
+						client to provide the domain name and its block id.						
+						The &lt;block:delete&gt; element contains the following 
+						child elements:
+						</p>
+<ul class="text">
+<li>
+								A &lt;id&gt; element that contains the client assigned identifier
+								for the block for the corresponding domain name.
+							
+</li>
+</ul><p>
+					
+</p>
+<p style='text-align: left'>Example &lt;delete&gt; request:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;delete&gt;
+        &lt;delete xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;delete&gt;block.tld&lt;/name&gt;
+        &lt;/delete&gt;
+    &lt;/delete&gt;
+    &lt;extension&gt;
+      &lt;delete xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+        &lt;id&gt;BLK-1&lt;/id&gt;
+      &lt;/delete&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						When a &lt;domain:delete&gt; command containing the &lt;block:delete&gt;
+						element has been processed successfully, the server MUST
+						respond with an EPP response with no &lt;resData&gt; element.
+						An EPP error response MUST be returned if a &lt;delete&gt; command cannot be processed for any reason.
+                    
+</p>
+<a name="anchor13"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.3"></a><h3>3.2.3.&nbsp;
+EPP &lt;renew&gt; Command</h3>
+
+<p>
+ 						This extension defines additional elements to extend the EPP
+						&lt;renew&gt; command and response to be used in conjunction with
+						the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+                    
+</p>
+<p>
+						To facilitate the renewal of a block the &lt;domain:renew&gt; 
+						command is extended with a &lt;block:renew&gt; element, which signals a
+						clients request to renew a sponsored block. The server SHOULD require the 
+						client to provide the domain name and its block id.						
+						The &lt;block:renew&gt; element contains the following 
+						child elements:
+						</p>
+<ul class="text">
+<li>
+								A &lt;id&gt; element that contains a the client assigned identifier
+								for the block for the corresponding domain name.
+							
+</li>
+</ul><p>
+					
+</p>
+<p style='text-align: left'>Example &lt;renew&gt; request:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+  &lt;command&gt;
+    &lt;renew&gt;
+        &lt;renew xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;name&gt;block.tld&lt;/name&gt;
+            &lt;curExpDate&gt;2015-01-01&lt;/curExpDate&gt;
+            &lt;period unit="y"&gt;5&lt;/period&gt;
+        &lt;/renew&gt;
+    &lt;/renew&gt;
+    &lt;extension&gt;
+      &lt;renew xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+        &lt;id&gt;BLK-1&lt;/id&gt;
+      &lt;/renew&gt;
+    &lt;/extension&gt;
+    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+  &lt;/command&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						When a &lt;domain:renew&gt; command containing the &lt;block:renew&gt;
+						element has been processed successfully, the server MUST
+						respond with the &lt;domain:renData&gt; element described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+						and a &lt;block:renData&gt; element that contains one 
+						&lt;block:id&gt; element.
+                    
+</p>
+<p style='text-align: left'>Example &lt;renew&gt; response:
+</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" standalone="no"?&gt;
+&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
+   &lt;response&gt;
+      &lt;result code="1000"&gt;
+         &lt;msg&gt;Command completed successfully&lt;/msg&gt;
+      &lt;/result&gt;
+      &lt;resData&gt;
+         &lt;renData xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
+            &lt;name&gt;block.tld&lt;/name&gt;
+            &lt;exDate&gt;2020-01-01T22:00:00.0Z&lt;/exDate&gt;
+         &lt;renData&gt;
+      &lt;/resData&gt;
+      &lt;extension&gt;
+         &lt;renData xmlns="urn:ar:params:xml:ns:block-1.0"&gt;
+            &lt;id&gt;BLK-1&lt;/id&gt;
+         &lt;/renData&gt;
+      &lt;/extension&gt;
+      &lt;trID&gt;
+         &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
+         &lt;svTRID&gt;54322-XYZ&lt;/svTRID&gt;
+      &lt;/trID&gt;
+   &lt;/response&gt;
+&lt;/epp&gt;
+</pre></div>
+<p>
+						An EPP error response MUST be returned if a &lt;domain:renew&gt; command containing the 
+						&lt;block:renew&gt; element cannot be processed for any reason.
+					
+</p>
+<a name="anchor14"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.4"></a><h3>3.2.4.&nbsp;
+EPP &lt;transfer&gt; Command</h3>
+
+<p>
+						This extension does not define any extension to the EPP
+						&lt;transfer&gt; command or response described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<a name="anchor15"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.3.2.5"></a><h3>3.2.5.&nbsp;
+EPP &lt;update&gt; Command</h3>
+
+<p>
+						This extension does not define any extension to the EPP
+						&lt;update&gt; command or response described in the
+						<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731].
+					
+</p>
+<a name="anchor16"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.4"></a><h3>4.&nbsp;
+Formal Syntax</h3>
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;schema targetNamespace="urn:ar:params:xml:ns:block-1.0"
+      xmlns:block="urn:ar:params:xml:ns:block-1.0"
+      xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
+      xmlns="http://www.w3.org/2001/XMLSchema"
+      elementFormDefault="qualified"&gt;
+
+    &lt;!--
+        Import common element types.
+    --&gt;
+    &lt;import namespace="urn:ietf:params:xml:ns:eppcom-1.0" /&gt;
+    &lt;import namespace="urn:ietf:params:xml:ns:domain-1.0" /&gt;
+
+    &lt;element name="create" type="block:createType"/&gt;
+    &lt;element name="info" type="block:infoType"/&gt;
+    &lt;element name="renew" type="block:renewType"/&gt;
+    &lt;element name="delete" type="block:deleteType"/&gt;
+
+    &lt;!--
+        Type definitions.
+    --&gt;
+    &lt;complexType name="createType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;complexType name="infoType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;complexType name="deleteType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;!--
+    Child elements of the &lt;renew&gt; command.
+    --&gt;
+    &lt;complexType name="renewType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;!--
+     Child response elements.
+     --&gt;
+    &lt;element name="creData" type="block:creDataType"/&gt;
+    &lt;element name="infData" type="block:infDataType"/&gt;
+    &lt;element name="renData" type="block:renDataType"/&gt;
+
+    &lt;!--
+     &lt;create&gt; response elements.
+     --&gt;
+    &lt;complexType name="creDataType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;!--
+     &lt;info&gt; response elements.
+     --&gt;
+    &lt;complexType name="infDataType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;!--
+        &lt;renew&gt; response elements.
+    --&gt;
+    &lt;complexType name="renDataType"&gt;
+        &lt;sequence&gt;
+            &lt;element name="id" type="eppcom:clIDType"/&gt;
+        &lt;/sequence&gt;
+    &lt;/complexType&gt;
+
+    &lt;!--
+        End of schema.
+    --&gt;
+&lt;/schema&gt;
+</pre></div>
+<a name="anchor17"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.section.5"></a><h3>5.&nbsp;
+Security Considerations</h3>
+
+<p>
+				The mapping extensions described in this document do not provide any
+				security services beyond those described by
+				<a class='info' href='#RFC5730'>EPP<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5730],
+				the
+				<a class='info' href='#RFC5731'>EPP Domain Name Mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731],
+				and protocol layers used by EPP. The security considerations
+				described in these other specifications apply to this specification
+				as well.
+			
+</p>
+<a name="rfc.references1"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<h3>6.&nbsp;Normative References</h3>
+<table width="99%" border="0">
+<tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
+<td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="RFC5730">[RFC5730]</a></td>
+<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5730">Extensible Provisioning Protocol (EPP)</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5730, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5730.txt">TXT</a>).</td></tr>
+<tr><td class="author-text" valign="top"><a name="RFC5731">[RFC5731]</a></td>
+<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5731">Extensible Provisioning Protocol (EPP) Domain Name Mapping</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5731, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5731.txt">TXT</a>).</td></tr>
+</table>
+
+<a name="rfc.authors"></a><br /><hr />
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<h3>Authors' Addresses</h3>
+<table width="99%" border="0" cellpadding="0" cellspacing="0">
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Chris Wright</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AusRegistry</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">8/10 Queens Road</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Melbourne, Victoria  3004</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AU</td></tr>
+<tr><td class="author" align="right">Email:&nbsp;</td>
+<td class="author-text"><a href="mailto:chris@ausregistry.com">chris@ausregistry.com</a></td></tr>
+<tr><td class="author" align="right">URI:&nbsp;</td>
+<td class="author-text"><a href="www.ausregistry.com">www.ausregistry.com</a></td></tr>
+<tr cellpadding="3"><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Quoc Pham</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AusRegistry</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">8/10 Queens Road</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">Melbourne, Victoria  3004</td></tr>
+<tr><td class="author-text">&nbsp;</td>
+<td class="author-text">AU</td></tr>
+<tr><td class="author" align="right">Email:&nbsp;</td>
+<td class="author-text"><a href="mailto:quoc.pham@ausregistry.com">quoc.pham@ausregistry.com</a></td></tr>
+<tr><td class="author" align="right">URI:&nbsp;</td>
+<td class="author-text"><a href="www.ausregistry.com">www.ausregistry.com</a></td></tr>
+</table>
+</body></html>
