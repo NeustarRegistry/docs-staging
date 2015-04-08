@@ -4,7 +4,7 @@
 Internet Engineering Task Force                                C. Wright
 Internet-Draft                                                   Q. Pham
 Intended status: Informational                               AusRegistry
-Expires: September 27, 2015                               March 26, 2015
+Expires: September 2, 2015                                    March 2015
 
 
   Domain Block Mapping for the Extensible Provisioning Protocol (EPP)
@@ -31,7 +31,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 27, 2015.
+   This Internet-Draft will expire on September 2, 2015.
 
 
 
@@ -52,7 +52,7 @@ Status of this Memo
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 1]
+Wright & Pham           Expires September 2, 2015               [Page 1]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -108,7 +108,7 @@ Table of Contents
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 2]
+Wright & Pham           Expires September 2, 2015               [Page 2]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -164,7 +164,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 3]
+Wright & Pham           Expires September 2, 2015               [Page 3]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -220,7 +220,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 4]
+Wright & Pham           Expires September 2, 2015               [Page 4]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -276,7 +276,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 5]
+Wright & Pham           Expires September 2, 2015               [Page 5]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -332,7 +332,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 6]
+Wright & Pham           Expires September 2, 2015               [Page 6]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -363,8 +363,9 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
        <create>
          <create xmlns="urn:ietf:params:xml:ns:domain-1.0">
            <name>block.tld</name>
+           <period unit="y">2</period>
            <registrant>jd1234</registrant>
-           <period unit="y">2<period>
+           <authInfo></authInfo>
          </create>
        </create>
        <extension>
@@ -387,8 +388,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-
-Wright & Pham          Expires September 27, 2015               [Page 7]
+Wright & Pham           Expires September 2, 2015               [Page 7]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -444,7 +444,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 8]
+Wright & Pham           Expires September 2, 2015               [Page 8]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -500,7 +500,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015               [Page 9]
+Wright & Pham           Expires September 2, 2015               [Page 9]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -556,7 +556,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015              [Page 10]
+Wright & Pham           Expires September 2, 2015              [Page 10]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -612,7 +612,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015              [Page 11]
+Wright & Pham           Expires September 2, 2015              [Page 11]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -668,7 +668,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015              [Page 12]
+Wright & Pham           Expires September 2, 2015              [Page 12]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -724,7 +724,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
 
 
 
-Wright & Pham          Expires September 27, 2015              [Page 13]
+Wright & Pham           Expires September 2, 2015              [Page 13]
 
 Internet-Draft          EPP Domain Block Mapping              March 2015
 
@@ -780,5 +780,5 @@ Authors' Addresses
 
 
 
-Wright & Pham          Expires September 27, 2015              [Page 14]
+Wright & Pham           Expires September 2, 2015              [Page 14]
 
