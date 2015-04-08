@@ -233,6 +233,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
        <info>
          <info xmlns="urn:ietf:params:xml:ns:domain-1.0">
            <name>block.tld</name>
+         </info>
        </info>
        <extension>
          <info xmlns="urn:ar:params:xml:ns:block-1.0">
@@ -248,7 +249,6 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
    <domain:infData> element described in the EPP Domain Name Mapping
    [RFC5731]. and also include a <block:infData> element that contains
    one <block:id> element.
-
 
 
 
@@ -456,7 +456,7 @@ Internet-Draft          EPP Domain Block Mapping              March 2015
      <command>
        <delete>
            <delete xmlns="urn:ietf:params:xml:ns:domain-1.0">
-               <delete>block.tld</name>
+               <name>block.tld</name>
            </delete>
        </delete>
        <extension>
