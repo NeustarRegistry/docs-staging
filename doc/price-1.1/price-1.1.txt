@@ -351,7 +351,7 @@ Internet-Draft  EPP Domain Name Price Information Mapping     March 2015
              <name premium="1">premium.example</name>
              <period unit="y">5</period>
              <createPrice>100</createPrice>
-             <renewalPrice>100</renewalPrice>
+             <renewPrice>100</renewPrice>
              <transferPrice>20</transferPrice>
              <restorePrice>40</restorePrice>
            </cd>
@@ -359,7 +359,7 @@ Internet-Draft  EPP Domain Name Price Information Mapping     March 2015
              <name premium="0">non-premium.example</name>
              <period unit="y">5</period>
              <createPrice>10</createPrice>
-             <renewalPrice>10</renewalPrice>
+             <renewPrice>10</renewPrice>
              <transferPrice>2</transferPrice>
              <restorePrice>40</restorePrice>
            </cd>
