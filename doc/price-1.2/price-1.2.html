@@ -876,24 +876,24 @@ EPP &lt;update&gt; Command</h3>
 &lt;?xml version="1.0" standalone="no"?&gt;
 &lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
   &lt;command&gt;
-    &lt;update op="request"&gt;
+    &lt;update&gt;
       &lt;update xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
         &lt;name&gt;premium.example&lt;/name&gt;
-     &lt;/update&gt;
+        &lt;chg/&gt;
+      &lt;/update&gt;
     &lt;/update&gt;
     &lt;extension&gt;
-      &lt;update xmlns="urn:ar:params:xml:ns:rgp-1.0"&gt;
-        &lt;restore op="request" /&gt;
-      &lt;/udpate&gt;
-    &lt;/extension&gt;
-    &lt;extension&gt;
+      &lt;update xmlns="urn:ietf:params:xml:ns:rgp-1.0"&gt;
+        &lt;restore op="request"/&gt;
+      &lt;/update&gt;
       &lt;update xmlns="urn:ar:params:xml:ns:price-1.2"&gt;
-        &lt;ack /&gt;
-      &lt;/udpate&gt;
+        &lt;ack/&gt;
+      &lt;/update&gt;
     &lt;/extension&gt;
     &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
   &lt;/command&gt;
 &lt;/epp&gt;
+
 </pre></div>
 <p style='text-align: left'>Example &lt;update&gt; command including pricing 
 							information in the acknowledgement
@@ -901,26 +901,26 @@ EPP &lt;update&gt; Command</h3>
 &lt;?xml version="1.0" standalone="no"?&gt;
 &lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
   &lt;command&gt;
-    &lt;update op="request"&gt;
+    &lt;update&gt;
       &lt;update xmlns="urn:ietf:params:xml:ns:domain-1.0"&gt;
         &lt;name&gt;premium.example&lt;/name&gt;
-     &lt;/update&gt;
+        &lt;chg/&gt;
+      &lt;/update&gt;
     &lt;/update&gt;
     &lt;extension&gt;
-      &lt;update xmlns="urn:ar:params:xml:ns:rgp-1.0"&gt;
-        &lt;restore op="request" /&gt;
-      &lt;/udpate&gt;
-    &lt;/extension&gt;
-    &lt;extension&gt;
+      &lt;update xmlns="urn:ietf:params:xml:ns:rgp-1.0"&gt;
+        &lt;restore op="request"/&gt;
+      &lt;/update&gt;
       &lt;update xmlns="urn:ar:params:xml:ns:price-1.2"&gt;
         &lt;ack&gt;
-            &lt;price&gt;40&lt;/price&gt;
+          &lt;price&gt;12.2&lt;/price&gt;
         &lt;/ack&gt;
-      &lt;/udpate&gt;
+      &lt;/update&gt;
     &lt;/extension&gt;
     &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
   &lt;/command&gt;
 &lt;/epp&gt;
+
 </pre></div>
 <p>
                         Servers that require the use of this extension for the restoration
