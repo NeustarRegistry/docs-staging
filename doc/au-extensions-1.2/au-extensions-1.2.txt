@@ -284,35 +284,35 @@ Internet-Draft            .au Extensions to EPP                July 2015
    o  An <auext:infData> element which contains the .au extension
       information.
 
-   o  An <auext:auProperties> element which contains the following
-      elements:
+      *  An <auext:auProperties> element which contains the following
+         elements:
 
-      *  An <auext:registrantName> element that contains the name of the
-         Registrant of the registered domain object.
+         +  An <auext:registrantName> element that contains the name of
+            the Registrant of the registered domain object.
 
-      *  An OPTIONAL <auext:registrantID> element that contains the
-         identifier for the Registrant's eligibility type.
+         +  An OPTIONAL <auext:registrantID> element that contains the
+            identifier for the Registrant's eligibility type.
 
-         +  Every <auext:registrantID> element contains a "type" which
-            identifies the type of the Registrant ID specified for the
-            <registrantID> element.
+            -  Every <auext:registrantID> element contains a "type"
+               which identifies the type of the Registrant ID specified
+               for the <registrantID> element.
 
-      *  An <auext:eligibilityType> element that contains the
-         Registrant's eligibility type.
+         +  An <auext:eligibilityType> element that contains the
+            Registrant's eligibility type.
 
-      *  An OPTIONAL <auext:eligibilityName> element that contains the
-         name of the individual or organisation that represents the
-         Registrant which the eligibility is based on.
+         +  An OPTIONAL <auext:eligibilityName> element that contains
+            the name of the individual or organisation that represents
+            the Registrant which the eligibility is based on.
 
-      *  An OPTIONAL <auext:eligibilityID> element that contains the
-         identifier for the eligibility name.
+         +  An OPTIONAL <auext:eligibilityID> element that contains the
+            identifier for the eligibility name.
 
-         +  Every <auext:eligibilityID> element that contains a "type"
-            which identifies the type of the eligibility ID specified
-            for the <eligibilityName> element.
+            -  Every <auext:eligibilityID> element that contains a
+               "type" which identifies the type of the eligibility ID
+               specified for the <eligibilityName> element.
 
-      *  A <auext:policyReason> element that contains the policy reason
-         for which the domain object is registered under.
+         +  A <auext:policyReason> element that contains the policy
+            reason for which the domain object is registered under.
 
    Example <domain:info> response for an authorized client:
 
@@ -452,35 +452,35 @@ Internet-Draft            .au Extensions to EPP                July 2015
    o  A <auext:create> element which contains a number of elements that
       hold the information which is specific to the .au name space.
 
-   o  A <auext:auProperties> element which contains the following child
-      elements:
+      *  A <auext:auProperties> element which contains the following
+         child elements:
 
-      *  A <auext:registrantName> element that contains the name of the
-         Registrant of the requested domain object.
+         +  A <auext:registrantName> element that contains the name of
+            the Registrant of the requested domain object.
 
-      *  An OPTIONAL <auext:registrantID> element that contains the
-         identifier for the Registrant.
+         +  An OPTIONAL <auext:registrantID> element that contains the
+            identifier for the Registrant.
 
-         +  Every <auext:registrantID> element MUST contain a "type"
-            attribute that identifies the type of the Registrant ID
-            specified by the <registrantID> element.
+            -  Every <auext:registrantID> element MUST contain a "type"
+               attribute that identifies the type of the Registrant ID
+               specified by the <registrantID> element.
 
-      *  An <auext:eligibilityType> element that contains the
-         Registrant's eligibility type.
+         +  An <auext:eligibilityType> element that contains the
+            Registrant's eligibility type.
 
-      *  An OPTIONAL <auext:eligibilityName> element that contains the
-         name of the individual or organisation that represents the
-         Registrant which the eligibility is based on.
+         +  An OPTIONAL <auext:eligibilityName> element that contains
+            the name of the individual or organisation that represents
+            the Registrant which the eligibility is based on.
 
-      *  An OPTIONAL <auext:eligibilityID> element that that contains
-         the identifier for the eligibility name.
+         +  An OPTIONAL <auext:eligibilityID> element that contains the
+            identifier for the eligibility name.
 
-         +  Every <auext:eligibilityID> element MUST have a "type"
-            attribute that identifies the type of the eligibility ID
-            specified for the <eligibilityName> element.
+            -  Every <auext:eligibilityID> element MUST have a "type"
+               attribute that identifies the type of the eligibility ID
+               specified for the <eligibilityName> element.
 
-      *  A <auext:policyReason> element that contains the policy reason
-         for which the domain object registered under.
+         +  A <auext:policyReason> element that contains the policy
+            reason for which the domain object registered under.
 
    Example <domain:create> command:
 
@@ -606,8 +606,8 @@ Internet-Draft            .au Extensions to EPP                July 2015
             the name of the individual or organisation that represents
             the Registrant which the eligibility is based on.
 
-         +  An OPTIONAL <auext:eligibilityID> element that that contains
-            the identifier for the eligibility name.
+         +  An OPTIONAL <auext:eligibilityID> element that contains the
+            identifier for the eligibility name.
 
 
 
@@ -752,29 +752,29 @@ Internet-Draft            .au Extensions to EPP                July 2015
       *  An <auext:registrantTransfer> element which contains the
          following child elements:
 
-         +  An <auDomain:name> element MUST be provided which specifies
-            the fully qualifed name of the domain of which the
-            registrant should be transfered.
-
-         +  An <auDomain:curExpDate> element MUST be provided which
-            specifies the current expiry date of the domain.
-
-         +  An <auDomain:period> element that specifies the period for
-            which the new registrant wants the name to be registered
-
-         +  A <auDomain:auProperties> element that contains the
+         +  An <auDomain:registrantTransfer> element which contains the
             following child elements:
 
-            -  A <auDomain:registrantName> element MUST be provided.
-               This element MUST contain an english readable string for
-               the Registrant's name.
+            -  An <auDomain:name> element MUST be provided which
+               specifies the fully qualifed name of the domain of which
+               the registrant should be transfered.
 
-            -  An OPTIONAL <auDomain:registrantID> element that
-               represents the identifier for the Registrant.
+            -  An <auDomain:curExpDate> element MUST be provided which
+               specifies the current expiry date of the domain.
 
-               o  Every <auext:registrantID> element MUST contain a
-                  "type" attribute that identifies the type of the
-                  Registrant ID specified by the <registrantID> element.
+            -  An <auDomain:period> element that specifies the period
+               for which the new registrant wants the name to be
+               registered
+
+            -  A <auDomain:auProperties> element that contains the
+               following child elements:
+
+               o  A <auDomain:registrantName> element MUST be provided.
+                  This element MUST contain an english readable string
+                  for the Registrant's name.
+
+               o  An OPTIONAL <auDomain:registrantID> element that
+                  represents the identifier for the Registrant.
 
 
 
@@ -785,40 +785,40 @@ Pham & Wright            Expires January 2, 2016               [Page 14]
 Internet-Draft            .au Extensions to EPP                July 2015
 
 
-            -  An <auext:eligibilityType> element that contains the
-               Registrant's eligibility type.
+                  *  Every <auext:registrantID> element MUST contain a
+                     "type" attribute that identifies the type of the
+                     Registrant ID specified by the <registrantID>
+                     element.
 
-            -  An OPTIONAL <auext:eligibilityName> element that contains
-               the name of the individual or organisation that
-               represents the Registrant which the eligibility is based
-               on.
+               o  An <auext:eligibilityType> element that contains the
+                  Registrant's eligibility type.
 
-            -  An OPTIONAL <auext:eligibilityID> element that that
-               contains the identifier for the eligibility name.
+               o  An OPTIONAL <auext:eligibilityName> element that
+                  contains the name of the individual or organisation
+                  that represents the Registrant which the eligibility
+                  is based on.
 
-               o  Every <auext:eligibilityID> element MUST have a "type"
-                  attribute that identifies the type of the eligibility
-                  ID specified for the <eligibilityName> element.
+               o  An OPTIONAL <auext:eligibilityID> element that
+                  contains the identifier for the eligibility name.
 
-            -  A <auext:policyReason> element that contains the policy
-               reason for which the domain object registered under.
+                  *  Every <auext:eligibilityID> element MUST have a
+                     "type" attribute that identifies the type of the
+                     eligibility ID specified for the <eligibilityName>
+                     element.
 
-         +  A <auDomain:explanation> element MUST be provided.  This
-            element must contain an explanation as to the purpose of the
-            update For example a correction of a spelling mistake.  It
-            should be noted that these explanations are reviewed by the
-            regulator and this update mechanism is NOT provided to
-            facilitate transfer of registrant.
+               o  A <auext:policyReason> element that contains the
+                  policy reason for which the domain object registered
+                  under.
 
-         +  An OPTIONAL <auext:clTRID> element which contains the client
-            supplied identifier for the transaction.
+            -  A <auDomain:explanation> element MUST be provided.  This
+               element must contain an explanation as to the purpose of
+               the update For example a correction of a spelling
+               mistake.  It should be noted that these explanations are
+               reviewed by the regulator and this update mechanism is
+               NOT provided to facilitate transfer of registrant.
 
-
-
-
-
-
-
+      *  An OPTIONAL <auext:clTRID> element which contains the client
+         supplied identifier for the transaction.
 
 
 
@@ -911,11 +911,11 @@ Internet-Draft            .au Extensions to EPP                July 2015
       elements:
 
       *  A <auDomain:name> element that contains the fully qualified
-         name of the domain which the registrant transfer was applied.
+         name of the domain to which the registrant transfer was
+         applied.
 
       *  A <auDomain:exDate> element that contains the new expiry date
          of the domain after the registrant transfer.
-
 
 
 

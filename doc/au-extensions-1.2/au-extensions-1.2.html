@@ -432,60 +432,63 @@ EPP &lt;domain:info&gt; Response</h3>
 <li>
 							An &lt;auext:infData&gt; element which contains the .au extension
 							information.
-						
-</li>
-<li>
-							An &lt;auext:auProperties&gt; element which contains the following
-							elements:
 							
 <ul class="text">
 <li>
-									An &lt;auext:registrantName&gt; element that contains the name of the
-									Registrant of the registered domain object.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:registrantID&gt; element that contains the
-									identifier for the Registrant's eligibility type.
+									An &lt;auext:auProperties&gt; element which contains the following
+									elements:
 									
 <ul class="text">
 <li>
-											Every &lt;auext:registrantID&gt; element contains a "type" which
-											identifies the type of the Registrant ID specified for the
-											&lt;registrantID&gt; element.
+											An &lt;auext:registrantName&gt; element that contains the name of the
+											Registrant of the registered domain object.
 										
 </li>
-</ul>
-								
-</li>
 <li>
-									An &lt;auext:eligibilityType&gt; element that contains the
-									Registrant's eligibility type.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
-									the name of the individual or organisation that represents
-									the Registrant which the eligibility is based on.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:eligibilityID&gt; element that contains the
-									identifier for the eligibility name.
-									
+											An OPTIONAL &lt;auext:registrantID&gt; element that contains the
+											identifier for the Registrant's eligibility type.
+											
 <ul class="text">
 <li>
-											Every &lt;auext:eligibilityID&gt; element that contains a "type"
-											which identifies the type of the eligibility ID specified for
-											the &lt;eligibilityName&gt; element.
+													Every &lt;auext:registrantID&gt; element contains a "type" which
+													identifies the type of the Registrant ID specified for the
+													&lt;registrantID&gt; element.
+												
+</li>
+</ul>
+										
+</li>
+<li>
+											An &lt;auext:eligibilityType&gt; element that contains the
+											Registrant's eligibility type.
+										
+</li>
+<li>
+											An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
+											the name of the individual or organisation that represents
+											the Registrant which the eligibility is based on.
+										
+</li>
+<li>
+											An OPTIONAL &lt;auext:eligibilityID&gt; element that contains the
+											identifier for the eligibility name.
+											
+<ul class="text">
+<li>
+													Every &lt;auext:eligibilityID&gt; element that contains a "type"
+													which identifies the type of the eligibility ID specified for
+													the &lt;eligibilityName&gt; element.
+												
+</li>
+</ul>
+										
+</li>
+<li>
+											A &lt;auext:policyReason&gt; element that contains the policy reason
+											for which the domain object is registered under.
 										
 </li>
 </ul>
-								
-</li>
-<li>
-									A &lt;auext:policyReason&gt; element that contains the policy reason
-									for which the domain object is registered under.
 								
 </li>
 </ul>
@@ -621,60 +624,63 @@ EPP &lt;domain:create&gt; Command</h3>
 <li>
 							A &lt;auext:create&gt; element which contains a number of elements that
 							hold the information which is specific to the .au name space.
-						
-</li>
-<li>
-							A &lt;auext:auProperties&gt; element which contains the following child
-							elements:
 							
 <ul class="text">
 <li>
-									A &lt;auext:registrantName&gt; element that contains the name of the
-									Registrant of the requested domain object.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:registrantID&gt; element that contains the
-									identifier for the Registrant.
+									A &lt;auext:auProperties&gt; element which contains the following child
+									elements:
 									
 <ul class="text">
 <li>
-											Every &lt;auext:registrantID&gt; element MUST contain a "type"
-											attribute that identifies the type of the Registrant ID
-											specified by the &lt;registrantID&gt; element.
+											A &lt;auext:registrantName&gt; element that contains the name of the
+											Registrant of the requested domain object.
 										
 </li>
-</ul>
-								
-</li>
 <li>
-									An &lt;auext:eligibilityType&gt; element that contains the
-									Registrant's eligibility type.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
-									the name of the individual or organisation that represents
-									the Registrant which the eligibility is based on.
-								
-</li>
-<li>
-									An OPTIONAL &lt;auext:eligibilityID&gt; element that that contains
-									the identifier for the eligibility name.
-									
+											An OPTIONAL &lt;auext:registrantID&gt; element that contains the
+											identifier for the Registrant.
+											
 <ul class="text">
 <li>
-											Every &lt;auext:eligibilityID&gt; element MUST have a "type"
-											attribute that identifies the type of the eligibility ID
-											specified for the &lt;eligibilityName&gt; element.
+													Every &lt;auext:registrantID&gt; element MUST contain a "type"
+													attribute that identifies the type of the Registrant ID
+													specified by the &lt;registrantID&gt; element.
+												
+</li>
+</ul>
+										
+</li>
+<li>
+											An &lt;auext:eligibilityType&gt; element that contains the
+											Registrant's eligibility type.
+										
+</li>
+<li>
+											An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
+											the name of the individual or organisation that represents
+											the Registrant which the eligibility is based on.
+										
+</li>
+<li>
+											An OPTIONAL &lt;auext:eligibilityID&gt; element that contains
+											the identifier for the eligibility name.
+											
+<ul class="text">
+<li>
+													Every &lt;auext:eligibilityID&gt; element MUST have a "type"
+													attribute that identifies the type of the eligibility ID
+													specified for the &lt;eligibilityName&gt; element.
+												
+</li>
+</ul>
+										
+</li>
+<li>
+											A &lt;auext:policyReason&gt; element that contains the policy
+											reason for which the domain object registered under.
 										
 </li>
 </ul>
-								
-</li>
-<li>
-									A &lt;auext:policyReason&gt; element that contains the policy
-									reason for which the domain object registered under.
 								
 </li>
 </ul>
@@ -814,7 +820,7 @@ EPP &lt;domain:update&gt; Command</h3>
 										
 </li>
 <li>
-											An OPTIONAL &lt;auext:eligibilityID&gt; element that that contains
+											An OPTIONAL &lt;auext:eligibilityID&gt; element that contains
 											the identifier for the eligibility name.
 											
 <ul class="text">
@@ -942,95 +948,103 @@ au Extensions &lt;auext:registrantTransfer&gt; Command</h3>
 									
 <ul class="text">
 <li>
-											An &lt;auDomain:name&gt; element MUST be provided which
-											specifies the fully qualifed name of the domain of which
-											the registrant should be transfered.
-										
-</li>
-<li>
-											An &lt;auDomain:curExpDate&gt; element MUST be provided which
-											specifies the current expiry date of the domain.
-										
-</li>
-<li>
-											An &lt;auDomain:period&gt; element that specifies the period for
-											which the new registrant wants the name to be registered
-										
-</li>
-<li>
-											A &lt;auDomain:auProperties&gt; element that contains the
-											following child elements:
+											An &lt;auDomain:registrantTransfer&gt; element which
+											contains the following child elements:
 											
 <ul class="text">
 <li>
-													A &lt;auDomain:registrantName&gt; element MUST be provided.
-													This element MUST contain an english readable string
-													for the Registrant's name.
+													An &lt;auDomain:name&gt; element MUST be provided which
+													specifies the fully qualifed name of the domain of which
+													the registrant should be transfered.
 												
 </li>
 <li>
-													An OPTIONAL &lt;auDomain:registrantID&gt; element that
-													represents the identifier for the Registrant.
+													An &lt;auDomain:curExpDate&gt; element MUST be provided which
+													specifies the current expiry date of the domain.
+												
+</li>
+<li>
+													An &lt;auDomain:period&gt; element that specifies the period for
+													which the new registrant wants the name to be registered
+												
+</li>
+<li>
+													A &lt;auDomain:auProperties&gt; element that contains the
+													following child elements:
 													
 <ul class="text">
 <li>
-															Every &lt;auext:registrantID&gt; element MUST contain a "type"
-															attribute that identifies the type of the Registrant ID
-															specified by the &lt;registrantID&gt; element.
+															A &lt;auDomain:registrantName&gt; element MUST be provided.
+															This element MUST contain an english readable string
+															for the Registrant's name.
+														
+</li>
+<li>
+															An OPTIONAL &lt;auDomain:registrantID&gt; element that
+															represents the identifier for the Registrant.
+															
+<ul class="text">
+<li>
+																	Every &lt;auext:registrantID&gt; element MUST contain a "type"
+																	attribute that identifies the type of the Registrant ID
+																	specified by the &lt;registrantID&gt; element.
+																
+</li>
+</ul>
+														
+</li>
+<li>
+															An &lt;auext:eligibilityType&gt; element that contains the
+															Registrant's eligibility type.
+														
+</li>
+<li>
+															An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
+															the name of the individual or organisation that represents
+															the Registrant which the eligibility is based on.
+														
+</li>
+<li>
+															An OPTIONAL &lt;auext:eligibilityID&gt; element that contains
+															the identifier for the eligibility name.
+															
+<ul class="text">
+<li>
+																	Every &lt;auext:eligibilityID&gt; element MUST have a "type"
+																	attribute that identifies the type of the eligibility ID
+																	specified for the &lt;eligibilityName&gt; element.
+																
+</li>
+</ul>
+														
+</li>
+<li>
+															A &lt;auext:policyReason&gt; element that contains the policy
+															reason for which the domain object registered under.
 														
 </li>
 </ul>
 												
 </li>
 <li>
-													An &lt;auext:eligibilityType&gt; element that contains the
-													Registrant's eligibility type.
-												
-</li>
-<li>
-													An OPTIONAL &lt;auext:eligibilityName&gt; element that contains
-													the name of the individual or organisation that represents
-													the Registrant which the eligibility is based on.
-												
-</li>
-<li>
-													An OPTIONAL &lt;auext:eligibilityID&gt; element that that contains
-													the identifier for the eligibility name.
-													
-<ul class="text">
-<li>
-															Every &lt;auext:eligibilityID&gt; element MUST have a "type"
-															attribute that identifies the type of the eligibility ID
-															specified for the &lt;eligibilityName&gt; element.
-														
-</li>
-</ul>
-												
-</li>
-<li>
-													A &lt;auext:policyReason&gt; element that contains the policy
-													reason for which the domain object registered under.
+													A &lt;auDomain:explanation&gt; element MUST be provided.
+													This element must contain an explanation as to the
+													purpose of the update For example a correction of a
+													spelling mistake.  It should be noted that these
+													explanations are reviewed by the regulator and this
+													update mechanism is NOT provided to facilitate transfer
+													of registrant.
 												
 </li>
 </ul>
 										
 </li>
-<li>
-											A &lt;auDomain:explanation&gt; element MUST be provided.
-											This element must contain an explanation as to the
-											purpose of the update For example a correction of a
-											spelling mistake.  It should be noted that these
-											explanations are reviewed by the regulator and this
-											update mechanism is NOT provided to facilitate transfer
-											of registrant.
-										
-</li>
-<li>
-											An OPTIONAL &lt;auext:clTRID&gt; element which contains the
-											client supplied identifier for the transaction.
-										
-</li>
 </ul>
+								
+</li>
+<li>
+									An OPTIONAL &lt;auext:clTRID&gt; element which contains the
+									client supplied identifier for the transaction.
 								
 </li>
 </ul>
@@ -1115,7 +1129,7 @@ au Extensions &lt;auext:registrantTransfer&gt; Response</h3>
 <ul class="text">
 <li>
 									A &lt;auDomain:name&gt; element that contains the fully qualified
-									name of the domain which the registrant transfer was applied.
+									name of the domain to which the registrant transfer was applied.
 								
 </li>
 <li>
