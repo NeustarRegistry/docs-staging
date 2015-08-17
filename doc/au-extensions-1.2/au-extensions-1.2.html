@@ -1321,11 +1321,7 @@ XML Schema [urn:X-au:params:xml:ns:auext-1.2]</h3>
     &lt;/complexType&gt;
 
     &lt;!--
-    policy numbers can be allocated up to 106. Less than the max
-    number of policy values may be valid in the .au registry. This
-    will be handled by registry command validation. (this is done so
-    that a new schema does not have to be released each time the
-    policy reasons are modified)
+    policyNumType is used for policy reason
     --&gt;
     &lt;simpleType name="policyNumType"&gt;
         &lt;restriction base="integer"&gt;

@@ -1149,11 +1149,7 @@ Internet-Draft            .au Extensions to EPP                July 2015
        </complexType>
 
        <!--
-       policy numbers can be allocated up to 106. Less than the max
-       number of policy values may be valid in the .au registry. This
-       will be handled by registry command validation. (this is done so
-       that a new schema does not have to be released each time the
-       policy reasons are modified)
+       policyNumType is used for policy reason
        -->
        <simpleType name="policyNumType">
            <restriction base="integer">
@@ -1169,6 +1165,10 @@ Internet-Draft            .au Extensions to EPP                July 2015
 
 8.2.  XML Schema [urn:X-au:params:xml:ns:audomain-1.1]
 
+   <?xml version="1.0" encoding="UTF-8"?>
+   <schema targetNamespace="urn:X-au:params:xml:ns:audomain-1.1"
+           xmlns:auDomain="urn:X-au:params:xml:ns:audomain-1.1"
+           xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
 
 
 
@@ -1177,10 +1177,6 @@ Pham & Wright            Expires January 2, 2016               [Page 21]
 Internet-Draft            .au Extensions to EPP                July 2015
 
 
-   <?xml version="1.0" encoding="UTF-8"?>
-   <schema targetNamespace="urn:X-au:params:xml:ns:audomain-1.1"
-           xmlns:auDomain="urn:X-au:params:xml:ns:audomain-1.1"
-           xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
            xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
            xmlns:auext="urn:X-au:params:xml:ns:auext-1.2"
            xmlns="http://www.w3.org/2001/XMLSchema"
@@ -1225,6 +1221,10 @@ Internet-Draft            .au Extensions to EPP                July 2015
                <element name="curExpDate" type="date" minOccurs="1"/>
                <element name="period" type="domain:periodType"
                         minOccurs="0"/>
+               <element name="auProperties"
+                        type="auDomain:auPropertiesType" minOccurs="1"/>
+               <element name="explanation" type="auext:explanationType"
+                        minOccurs="1"/>
 
 
 
@@ -1233,10 +1233,6 @@ Pham & Wright            Expires January 2, 2016               [Page 22]
 Internet-Draft            .au Extensions to EPP                July 2015
 
 
-               <element name="auProperties"
-                        type="auDomain:auPropertiesType" minOccurs="1"/>
-               <element name="explanation" type="auext:explanationType"
-                        minOccurs="1"/>
            </sequence>
        </complexType>
 
@@ -1281,15 +1277,16 @@ Internet-Draft            .au Extensions to EPP                July 2015
    security services beyond those described by EPP [RFC5730], the EPP
    Domain Name Mapping [RFC5731], and protocol layers used by EPP.  The
    security considerations described in these other specifications apply
+   to this specification as well.
+
+
+
 
 
 
 Pham & Wright            Expires January 2, 2016               [Page 23]
 
 Internet-Draft            .au Extensions to EPP                July 2015
-
-
-   to this specification as well.
 
 
 10.  Normative References
@@ -1324,6 +1321,9 @@ Authors' Addresses
 
    Email: chris@ausregistry.com
    URI:   www.ausregistry.com
+
+
+
 
 
 
