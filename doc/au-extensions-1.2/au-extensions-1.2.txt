@@ -80,7 +80,7 @@ Table of Contents
      8.1.  XML Schema [urn:X-au:params:xml:ns:auext-1.2]  . . . . . . 18
      8.2.  XML Schema [urn:X-au:params:xml:ns:audomain-1.1] . . . . . 21
    9.  Security Considerations  . . . . . . . . . . . . . . . . . . . 23
-   10. Normative References . . . . . . . . . . . . . . . . . . . . . 24
+   10. Normative References . . . . . . . . . . . . . . . . . . . . . 23
    Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 24
 
 
@@ -1104,7 +1104,7 @@ Internet-Draft            .au Extensions to EPP                July 2015
                         minOccurs="0"/>
                <element name="eligibilityID"
                         type="auext:eligibilityIDType" minOccurs="0"/>
-               <element name="policyReason" type="auext:policyNumType"
+               <element name="policyReason" type="integer"
                         minOccurs="1"/>
            </sequence>
        </complexType>
@@ -1149,15 +1149,6 @@ Internet-Draft            .au Extensions to EPP                July 2015
        </complexType>
 
        <!--
-       policyNumType is used for policy reason
-       -->
-       <simpleType name="policyNumType">
-           <restriction base="integer">
-               <minInclusive value="1"/>
-           </restriction>
-       </simpleType>
-
-       <!--
        End of schema.
        -->
    </schema>
@@ -1169,14 +1160,6 @@ Internet-Draft            .au Extensions to EPP                July 2015
    <schema targetNamespace="urn:X-au:params:xml:ns:audomain-1.1"
            xmlns:auDomain="urn:X-au:params:xml:ns:audomain-1.1"
            xmlns:eppcom="urn:ietf:params:xml:ns:eppcom-1.0"
-
-
-
-Pham & Wright            Expires January 2, 2016               [Page 21]
-
-Internet-Draft            .au Extensions to EPP                July 2015
-
-
            xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
            xmlns:auext="urn:X-au:params:xml:ns:auext-1.2"
            xmlns="http://www.w3.org/2001/XMLSchema"
@@ -1186,6 +1169,14 @@ Internet-Draft            .au Extensions to EPP                July 2015
            Import common element types.
        -->
        <import namespace="urn:ietf:params:xml:ns:eppcom-1.0"
+
+
+
+Pham & Wright            Expires January 2, 2016               [Page 21]
+
+Internet-Draft            .au Extensions to EPP                July 2015
+
+
                schemaLocation="eppcom-1.0.xsd"/>
        <import namespace="urn:ietf:params:xml:ns:domain-1.0"
                schemaLocation="domain-1.0.xsd"/>
@@ -1225,14 +1216,6 @@ Internet-Draft            .au Extensions to EPP                July 2015
                         type="auDomain:auPropertiesType" minOccurs="1"/>
                <element name="explanation" type="auext:explanationType"
                         minOccurs="1"/>
-
-
-
-Pham & Wright            Expires January 2, 2016               [Page 22]
-
-Internet-Draft            .au Extensions to EPP                July 2015
-
-
            </sequence>
        </complexType>
 
@@ -1242,6 +1225,14 @@ Internet-Draft            .au Extensions to EPP                July 2015
        <complexType name="auPropertiesType">
            <sequence>
                <element name="registrantName" type="eppcom:labelType"
+
+
+
+Pham & Wright            Expires January 2, 2016               [Page 22]
+
+Internet-Draft            .au Extensions to EPP                July 2015
+
+
                         minOccurs="1"/>
                <element name="registrantID"
                         type="auext:registrantIDType" minOccurs="0"/>
@@ -1251,7 +1242,7 @@ Internet-Draft            .au Extensions to EPP                July 2015
                         minOccurs="0"/>
                <element name="eligibilityID"
                         type="auext:eligibilityIDType" minOccurs="0"/>
-               <element name="policyReason" type="auext:policyNumType"
+               <element name="policyReason" type="integer"
                         minOccurs="1"/>
            </sequence>
        </complexType>
@@ -1280,15 +1271,6 @@ Internet-Draft            .au Extensions to EPP                July 2015
    to this specification as well.
 
 
-
-
-
-
-Pham & Wright            Expires January 2, 2016               [Page 23]
-
-Internet-Draft            .au Extensions to EPP                July 2015
-
-
 10.  Normative References
 
    [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
@@ -1299,6 +1281,12 @@ Internet-Draft            .au Extensions to EPP                July 2015
               Domain Name Mapping", STD 69, RFC 5731, DOI 10.17487/
               RFC5731, August 2009,
               <http://www.rfc-editor.org/info/rfc5731>.
+
+
+
+Pham & Wright            Expires January 2, 2016               [Page 23]
+
+Internet-Draft            .au Extensions to EPP                July 2015
 
 
 Authors' Addresses
@@ -1321,6 +1309,18 @@ Authors' Addresses
 
    Email: chris@ausregistry.com
    URI:   www.ausregistry.com
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
