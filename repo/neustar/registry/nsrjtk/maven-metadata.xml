@@ -3,13 +3,14 @@
   <groupId>neustar.registry</groupId>
   <artifactId>nsrjtk</artifactId>
   <versioning>
-    <release>4.1.1</release>
+    <release>4.2.9</release>
     <versions>
       <version>4.0.0</version>
       <version>4.0.1</version>
       <version>4.1.0</version>
       <version>4.1.1</version>
+      <version>4.2.9</version>
     </versions>
-    <lastUpdated>20210205033647</lastUpdated>
+    <lastUpdated>20210610015129</lastUpdated>
   </versioning>
 </metadata>
